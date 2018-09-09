@@ -1,0 +1,15 @@
+Django
+django-debug-toolbar
+django-jinja
+djangorestframework
+Pillow
+psycopg2
+psycopg2-binary
+pytz
+django-querycount
+djangorestframework-jwt
+django-filter
+boto3==1.7.10
+django-rest-swagger
+django-extensions
+pydotplus
