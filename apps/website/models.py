@@ -1,3 +1,17 @@
 from django.db import models
+from django.utils.timezone import now
+from apps.website.config import PARA_TYPES, TEXT_TYPES
 
-# Create your models here.
+
+class Paragraph(models.Model):
+    type = models.PositiveSmallIntegerField(default=0, choices=PARA_TYPES)
+    title = models.CharField(max_length=256, blank=False)
+    image = models.URLField()
+    timestamp = models.DateTimeField(default=now)
+
+    text = models.TextField(blank=True)
+
+
+class TextField(models.Model):
+    type = models.PositiveSmallIntegerField(default=0, choices=TEXT_TYPES)
+    text = models.CharField(max_length=512, blank=False)

@@ -12,9 +12,9 @@ apps/user/__pycache__/
 apps/__pycache__/
 conf/__pycache__/
 
-# apps/website/migrations/
-# apps/blog/migrations/
-# apps/user/migrations/
+apps/website/migrations/
+apps/blog/migrations/
+apps/user/migrations/
 
 serverenv/
 

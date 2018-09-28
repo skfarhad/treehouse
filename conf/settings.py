@@ -6,7 +6,7 @@ SECRET_KEY = '9w@%w-#_fo$sb1koywgi(som@#!95vr)$*x%n-pr65h-ah47&7'
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 INSTALLED_APPS = [
@@ -16,6 +16,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'apps.user',
+    'apps.website',
+    'apps.blog',
 ]
 
 MIDDLEWARE = [
@@ -89,3 +92,6 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+MEDIA_ROOT = os.path.join(STATIC_ROOT, 'media')
