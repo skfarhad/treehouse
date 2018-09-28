@@ -67,7 +67,7 @@ WSGI_APPLICATION = 'conf.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'treehouse',
+        'NAME': 'skfarhad$treehouse',
         'USER': 'skfarhad',
         'PASSWORD': 'fcskmay12',
         'HOST': 'skfarhad.mysql.pythonanywhere-services.com',
