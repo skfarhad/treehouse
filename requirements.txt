@@ -13,3 +13,4 @@ boto3==1.7.10
 django-rest-swagger
 django-extensions
 pydotplus
+mysqlclient

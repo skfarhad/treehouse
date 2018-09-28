@@ -52,14 +52,26 @@ TEMPLATES = [
 WSGI_APPLICATION = 'conf.wsgi.application'
 
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'dapvsjgss91249',
+#         'USER': 'brqbnbpuessuqi',
+#         'PASSWORD': '539a770d2ec9c0bdb3639e9ca5abdbc5ee648647cf1219aa66f4a87989b16079',
+#         'HOST': 'ec2-54-163-245-44.compute-1.amazonaws.com',
+#         'PORT': 5432,
+#     }
+# }
+
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'dapvsjgss91249',
-        'USER': 'brqbnbpuessuqi',
-        'PASSWORD': '539a770d2ec9c0bdb3639e9ca5abdbc5ee648647cf1219aa66f4a87989b16079',
-        'HOST': 'ec2-54-163-245-44.compute-1.amazonaws.com',
-        'PORT': 5432,
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'treehouse',
+        'USER': 'skfarhad',
+        'PASSWORD': 'fcskmay12',
+        'HOST': 'skfarhad.mysql.pythonanywhere-services.com',
+        'PORT': '',
     }
 }
 
