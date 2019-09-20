@@ -4,6 +4,7 @@ from apps.website.views import HomeTemplateView, AboutTemplateView, BlogTemplate
     SidebarLTemplateView, SidebarRTemplateView, SingleTemplateView
 
 urlpatterns = [
+    path('', HomeTemplateView.as_view(), name='home_template'),
     path('home/', HomeTemplateView.as_view(), name='home_template'),
     path('about/', AboutTemplateView.as_view(), name='about_template'),
     path('blog/', BlogTemplateView.as_view(), name='blog_template'),

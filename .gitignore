@@ -6,15 +6,12 @@
 __pycache__/
 
 
+apps/__pycache__/
+conf/__pycache__/
 apps/website/__pycache__/
 apps/blog/__pycache__/
 apps/user/__pycache__/
-apps/__pycache__/
-conf/__pycache__/
-
-apps/website/migrations/
-apps/blog/migrations/
-apps/user/migrations/
+apps/portfolio/__pycache__/
 
 serverenv/
 
@@ -99,14 +96,6 @@ celerybeat-schedule
 # SageMath parsed files
 *.sage.py
 
-# Environments
-.env
-.venv
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
 
 # Spyder project settings
 .spyderproject
