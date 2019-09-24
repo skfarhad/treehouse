@@ -1,15 +1,18 @@
 from django.urls import path
 
-from apps.website.views import HomeTemplateView, AboutTemplateView, BlogTemplateView,\
-    SidebarLTemplateView, SidebarRTemplateView, SingleTemplateView
+from apps.website.views import HomePage, AboutPage, BlogPage,\
+    SidebarLeftPage, SidebarRightPage, BlogPostPage, \
+    ServiceDetailsPage, WorkDetailsPage
 
 urlpatterns = [
-    path('', HomeTemplateView.as_view(), name='home_template'),
-    path('home/', HomeTemplateView.as_view(), name='home_template'),
-    path('about/', AboutTemplateView.as_view(), name='about_template'),
-    path('blog/', BlogTemplateView.as_view(), name='blog_template'),
-    path('sidebar-left/', SidebarLTemplateView.as_view(), name='sidebar-left'),
-    path('sidebar-right/', SidebarRTemplateView.as_view(), name='sidebar-right'),
-    path('single/', SingleTemplateView.as_view(), name='single'),
+    path('', HomePage.as_view(), name='home_template'),
+    path('home/', HomePage.as_view(), name='home_template'),
+    path('about/', AboutPage.as_view(), name='about_template'),
+    path('blog/', BlogPage.as_view(), name='blog_template'),
+    path('sidebar-left/', SidebarLeftPage.as_view(), name='sidebar-left'),
+    path('sidebar-right/', SidebarRightPage.as_view(), name='sidebar-right'),
+    path('blog-post/', BlogPostPage.as_view(), name='blog-post'),
+    path('service-details/', ServiceDetailsPage.as_view(), name='service-details'),
+    path('work-details/', WorkDetailsPage.as_view(), name='work-details'),
 
 ]

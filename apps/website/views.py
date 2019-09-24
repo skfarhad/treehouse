@@ -2,84 +2,86 @@ from django.shortcuts import render
 from django.views import View
 # from django.http import HttpResponseRedirect
 from apps.portfolio.models import Service, WorkHistory
+from .helpers import get_objs_with_url, get_nav_urls
 
 
-def render_context(request, template, context, status):
-    return render(request, template, {'context': context}, status=status)
+class ContextPage(View):
+    template_path = 'err.html'
 
-
-def render_context(request, template, context, status):
-    return render(request, template, {'context': context}, status=status)
-
-
-def get_url(request, prefix, uri):
-    return request.build_absolute_uri(prefix + uri)
-
-
-def get_nav_urls(request):
-    # action_label = 'Login'
-    # action_link = get_url(request, '/user/', 'login_api')
-    # if request.user.is_authenticated:
-    #     action_label = 'Logout'
-    #     action_link = get_url(request, '/user/', 'logout_api')
-
-    context = {
-        'home': get_url(request, '/website/', 'home/'),
-        'about': get_url(request, '/website/', 'about/'),
-        'single': get_url(request, '/website/', 'single/'),
-        'sidebar_left': get_url(request, '/website/', 'sidebar-left/'),
-        'sidebar_right': get_url(request, '/website/', 'sidebar-right/'),
-        'blog': get_url(request, '/website/', 'blog/'),
-    }
-    return context
-
-
-class HomeTemplateView(View):
+    def get_context(self, request):
+        return get_nav_urls(request)
 
     def get(self, request, format=None):
-        context = get_nav_urls(request)
+        context = self.get_context(request)
+        return render(request, self.template_path, {'context': context}, 200)
+
+
+class DetailsPage(View):
+    ObjModel = None
+    template_path = 'err.html'
+    url_suffix = 'None'
+
+    def get_context(self, request):
+        return get_nav_urls(request)
+
+    def get(self, request, format=None):
+        # print(request)
+        obj_id = request.GET.get('id', False)
+        obj_values = self.ObjModel.objects.filter(id=obj_id).values()[0]
+        context = self.get_context(request)
         context.update({
-            'services': Service.objects.all().values(),
-            'recent_works': WorkHistory.objects.all().values()
+            self.url_suffix: obj_values
         })
-        return render_context(request, 'website/home.html', context, 200)
+        # print(context)
+        return render(request, self.template_path, {'context': context}, 200)
 
 
-class BlogTemplateView(View):
+class HomePage(ContextPage):
+    template_path = 'website/home.html'
 
-    def get(self, request, format=None):
+    def get_context(self, request):
         context = get_nav_urls(request)
-        return render_context(request, 'website/blog.html', context, 200)
+
+        context.update({
+            'services': get_objs_with_url(
+                Service, context['service_details']
+            ),
+            'recent_works': get_objs_with_url(
+                WorkHistory, context['work_details']
+            )
+        })
+        return context
 
 
-class AboutTemplateView(View):
-
-    def get(self, request, format=None):
-        context = get_nav_urls(request)
-        print(context)
-        return render_context(request, 'website/about.html', context, 200)
+class ServiceDetailsPage(DetailsPage):
+    ObjModel = Service
+    template_path = 'website/service_details.html'
+    url_suffix = 'service_details'
 
 
-class SingleTemplateView(View):
-
-    def get(self, request, format=None):
-        context = get_nav_urls(request)
-        print(context)
-        return render_context(request, 'website/single.html', context, 200)
+class WorkDetailsPage(DetailsPage):
+    ObjModel = WorkHistory
+    template_path = 'website/work_details.html'
+    url_suffix = 'work_details'
 
 
-class SidebarLTemplateView(View):
-
-    def get(self, request, format=None):
-        context = get_nav_urls(request)
-        print(context)
-        return render_context(request, 'website/sidebar-left.html', context, 200)
+class BlogPage(ContextPage):
+    template_path = 'website/blog.html'
 
 
-class SidebarRTemplateView(View):
+class AboutPage(ContextPage):
+    template_path = 'website/about.html'
 
-    def get(self, request, format=None):
-        context = get_nav_urls(request)
-        print(context)
-        return render_context(request, 'website/sidebar-right.html', context, 200)
+
+class BlogPostPage(ContextPage):
+    template_path = 'website/blog_post.html'
+
+
+class SidebarLeftPage(View):
+    template_path = 'website/sidebar-left.html'
+
+
+class SidebarRightPage(View):
+    template_path = 'website/sidebar-right.html'
+
 
