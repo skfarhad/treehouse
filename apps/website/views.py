@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views import View
-from django.http import HttpResponseRedirect
+# from django.http import HttpResponseRedirect
+from apps.portfolio.models import Service, WorkHistory
 
 
 def render_context(request, template, context, status):
@@ -15,7 +16,7 @@ def get_url(request, prefix, uri):
     return request.build_absolute_uri(prefix + uri)
 
 
-def get_context(request):
+def get_nav_urls(request):
     # action_label = 'Login'
     # action_link = get_url(request, '/user/', 'login_api')
     # if request.user.is_authenticated:
@@ -36,21 +37,25 @@ def get_context(request):
 class HomeTemplateView(View):
 
     def get(self, request, format=None):
-        context = get_context(request)
+        context = get_nav_urls(request)
+        context.update({
+            'services': Service.objects.all().values(),
+            'recent_works': WorkHistory.objects.all().values()
+        })
         return render_context(request, 'website/home.html', context, 200)
 
 
 class BlogTemplateView(View):
 
     def get(self, request, format=None):
-        context = get_context(request)
+        context = get_nav_urls(request)
         return render_context(request, 'website/blog.html', context, 200)
 
 
 class AboutTemplateView(View):
 
     def get(self, request, format=None):
-        context = get_context(request)
+        context = get_nav_urls(request)
         print(context)
         return render_context(request, 'website/about.html', context, 200)
 
@@ -58,7 +63,7 @@ class AboutTemplateView(View):
 class SingleTemplateView(View):
 
     def get(self, request, format=None):
-        context = get_context(request)
+        context = get_nav_urls(request)
         print(context)
         return render_context(request, 'website/single.html', context, 200)
 
@@ -66,7 +71,7 @@ class SingleTemplateView(View):
 class SidebarLTemplateView(View):
 
     def get(self, request, format=None):
-        context = get_context(request)
+        context = get_nav_urls(request)
         print(context)
         return render_context(request, 'website/sidebar-left.html', context, 200)
 
@@ -74,7 +79,7 @@ class SidebarLTemplateView(View):
 class SidebarRTemplateView(View):
 
     def get(self, request, format=None):
-        context = get_context(request)
+        context = get_nav_urls(request)
         print(context)
         return render_context(request, 'website/sidebar-right.html', context, 200)
 
