@@ -5,31 +5,30 @@
 {% endblock title %}
 
 {% block content %}
-
     <main id="main">
-
         <div class="container">
-
             <div class="row section topspace">
                 <div class="col-md-12">
                     <p class="lead text-center text-muted">
                         Hope is a dangerous thing. It can drive a man insane.
                         You <a href="about.html">measure</a>
                         yourself by the people who measure themselves by you.
-                        It only took me <a href="sidebar-right.html">six months!</a>. </p>
+                        It only took me <a href="sidebar-right.html">six months!</a>.
+                        I'm an intense Coder, Quick Learner, Problem solver and Team Player.
+                        Confident & Battle-ready to face the challenges of industry 4.0.
+                    </p>
                 </div>
             </div> <!-- / section -->
 
             <div class="row section topspace">
                 <div class="panel panel-cta"><div class="panel-body">
                     <div class="col-lg-8">
-                        <p>If you are interested to know the details of my <b>technical skill set</b>,
-                            please download my resume by clicking the button,
-                       to the right. </p>
+                        <p>Want to know the details of my <b>technical skill set</b>?
+                            Please view my resume here!</p>
                     </div>
                     <div class="col-lg-4 text-right">
                         <a href="https://drive.google.com/open?id=1MVzKH4ou7vy2VY4X-CnszPIQaQhPEuIdlslIrr4l8fc"
-                           class="btn btn-primary btn-lg">Download Resume</a>
+                           class="btn btn-primary btn-lg">Resume</a>
                     </div>
                 </div></div>
             </div> <!-- /section -->
@@ -38,6 +37,7 @@
                 <h2 class="section-title"><span>Services</span></h2>
                 <div class="row">
                     {% for service in context.services %}
+
                     <div class="col-sm-6 col-md-3">
                         <h3 class="text-center">{{ service.title }}</h3>
                         <p>{{ service.description }}</p>
@@ -46,18 +46,16 @@
                                class="btn btn-action">Read more</a>
                         </p>
                     </div>
-                    {% endfor %}
 
+                    {% endfor %}
                 </div>
             </div> <!-- / section -->
 
             <div class="row section recentworks topspace">
-
                 <h2 class="section-title"><span>Recent Works</span></h2>
-
                 <div class="thumbnails recentworks row">
-
                     {% for work in context.recent_works %}
+
                     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
                         <a class="thumbnail" href="{{ work.url }}">
                             <span class="img">
@@ -74,12 +72,10 @@
                         <h4></h4>
                         <p></p>
                     </div>
+
                     {% endfor %}
-
                 </div>
-
             </div> <!-- /section -->
-
 
             <!--div class="row section clients topspace">
                 <h2 class="section-title"><span>Clients</span></h2>
@@ -89,9 +85,6 @@
                     </p>
                 </div>
             </div--> <!-- /section -->
-
         </div>	<!-- /container -->
-
     </main>
-
 {% endblock content %}
