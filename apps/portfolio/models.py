@@ -8,7 +8,9 @@ class Service(models.Model):
     side_para_top = models.TextField(null=True, blank=True)
     side_para_middle = models.TextField(null=True, blank=True)
     side_para_bottom = models.TextField(null=True, blank=True)
-    image = models.URLField(null=True, blank=True)
+    image_url = models.URLField(null=True, blank=True)
+    video_url = models.URLField(null=True, blank=True)
+    image_path = models.ImageField(upload_to="para_images/", blank=True, null=True)
 
 
 class WorkHistory(models.Model):
@@ -17,5 +19,7 @@ class WorkHistory(models.Model):
     body_text = models.TextField(null=True, blank=True)
     side_para_top = models.TextField(null=True, blank=True)
     side_para_middle = models.TextField(null=True, blank=True)
-    image = models.URLField(null=True, blank=True)
+    image_url = models.URLField(null=True, blank=True)
+    video_url = models.URLField(null=True, blank=True)
+    image_path = models.ImageField(upload_to="para_images/", blank=True, null=True)
     category = models.TextField(max_length=128, blank=True)
