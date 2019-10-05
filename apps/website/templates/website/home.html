@@ -10,31 +10,29 @@
             <div class="row section topspace">
                 <div class="col-md-12">
                     <p class="lead text-center text-muted">
-                        An intense Coder, Quick Learner, Problem solver and a Team Player.
-                        Working for 4+ years in server automation, API/Back-End development
-                        for web/mobile/IoT enabled solutions.
-                        Extremely enthusiast about new researches and emerging technologies.
-                        Looking for opportunities to have significant
-                        impact on peoples lives with my technical abilities.
-                        Confident & eager to face the challenges of industry 4.0!
+                        {{ context.short_bio }}
                     </p>
                 </div>
             </div> <!-- / section -->
 
             <div class="row section topspace">
-                <div class="panel panel-cta"><div class="panel-body">
-                    <div class="col-lg-8">
-                        <p>Want to know the details of my <b>technical skill set</b>?
-                            Please view my resume here!</p>
+                <div class="panel panel-cta">
+                    <div class="panel-body">
+                        <div class="col-lg-8">
+                            <p>Want to know the details of my <b>technical skill set</b>?
+                                Please view my resume here!</p>
+                        </div>
+                        <div class="col-lg-4 text-right">
+                            <a href="https://drive.google.com/open?id=1MVzKH4ou7vy2VY4X-CnszPIQaQhPEuIdlslIrr4l8fc"
+                               class="btn btn-primary btn-lg">Resume</a>
+                        </div>
                     </div>
-                    <div class="col-lg-4 text-right">
-                        <a href="https://drive.google.com/open?id=1MVzKH4ou7vy2VY4X-CnszPIQaQhPEuIdlslIrr4l8fc"
-                           class="btn btn-primary btn-lg">Resume</a>
-                    </div>
-                </div></div>
+                </div>
+                <br>
+                <br>
             </div> <!-- /section -->
 
-            <div class="row section featured topspace">
+            <div id="services" class="row section featured topspace">
                 <h2 class="section-title"><span>Services</span></h2>
                 <div class="row">
                     {% for service in context.services %}
@@ -52,7 +50,7 @@
                 </div>
             </div> <!-- / section -->
 
-            <div class="row section recentworks topspace">
+            <div id="recent-works" class="row section recentworks topspace">
                 <h2 class="section-title"><span>Recent Works</span></h2>
                 <div class="thumbnails recentworks row">
                     {% for work in context.recent_works %}

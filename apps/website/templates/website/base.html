@@ -27,9 +27,9 @@
             <div id="head" class="parallax" parallax-speed="2">
                 <h1 id="logo" class="text-center">
                     <img class="img-circle" src="/media/initio/assets/images/round_pic5.png" alt="">
-                    <span class="title">Sk. Farhad</span>
-                    <span class="tagline">Software Engineer | Researcher <br>
-                        <a href="" style="color: whitesmoke">sk.farhad.eee@gmail.com</a></span>
+                    <span class="title">Hey! I'm Sk. Farhad</span>
+                    <span class="tagline">Software Engineer, Researcher and Tech Enthusiast<br>
+                    </span>
                 </h1>
             </div>
 
@@ -50,10 +50,15 @@
                         <ul class="nav navbar-nav">
                             <li class="active"><a href="{{ context.home }}">Home</a></li>
                             <li><a href="{{ context.about }}">About</a></li>
+                            <li><a href="{{ context.home }}#services">Services</a></li>
+                            <li><a href="{{ context.home }}#recent-works">Recent Works</a></li>
+                            <li><a data-toggle="modal"
+                                   data-target="#myModal"
+                                    >Contact</a></li>
                             <li><a href="{{ context.blog }}">Blog</a></li>
                             <li class="dropdown">
                                 <a href="" class="dropdown-toggle"
-                                   data-toggle="dropdown">More Pages <b class="caret">
+                                   data-toggle="dropdown">More<b class="caret">
                                 </b>
                                 </a>
                                 <ul class="dropdown-menu">
@@ -66,6 +71,55 @@
                     </div><!--/.nav-collapse -->
                 </div>
             </nav>
+
+            <div class="modal" id="myModal">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                  <h4 class="modal-title">Details</h4>
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="form-group">
+                      <label for="email">Email:</label>
+                      <input type="email" class="form-control" id="email"
+                             placeholder="Enter email" name="email">
+                    </div>
+
+                    <div class="form-group">
+                      <label for="full-name">Full name:</label>
+                      <input type="password" class="form-control" id="full-name"
+                             placeholder="Enter full name" name="full-name">
+                    </div>
+
+                    <div class="form-group">
+                      <label for="subject">Subject:</label>
+                      <input type="text" class="form-control" id="subject"
+                             placeholder="Mention Subject" name="subject">
+                    </div>
+
+                    <div class="form-group">
+                      <label for="email-body">Details:</label>
+                      <textarea class="form-control" rows="5" id="email-body"
+                             name="email-body">
+                      </textarea>
+                    </div>
+
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-dismiss="modal">SEND</button>
+                   <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+
+                  </div>
+                </div>
+            </div>
         </header>
     </div>
 

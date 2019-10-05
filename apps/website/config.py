@@ -1,11 +1,11 @@
 
 PARA_DICT = {
-    'Blog post': 0,
+    'Normal': 0,
     'Quote': 1,
     'Service': 2,
     'Project': 3,
     'About': 4,
-    'Resume': 5,
+    'Short-Bio': 5,
     'Address': 6,
     'Type3': 7,
     'Type4': 8,

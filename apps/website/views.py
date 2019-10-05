@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.views import View
 # from django.http import HttpResponseRedirect
 from apps.portfolio.models import Service, WorkHistory
+from apps.website.models import Paragraph
+from apps.website.config import PARA_DICT
 from .helpers import get_objs_with_url, get_nav_urls
 
 
@@ -41,8 +43,12 @@ class HomePage(ContextPage):
 
     def get_context(self, request):
         context = get_nav_urls(request)
+        short_bio = Paragraph.objects.filter(
+            type=PARA_DICT['Short-Bio']
+        )[0]
 
         context.update({
+            'short_bio': short_bio.text,
             'services': get_objs_with_url(
                 Service, context['service_details']
             ),
