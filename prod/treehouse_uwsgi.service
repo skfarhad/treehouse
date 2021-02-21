@@ -1,0 +1,18 @@
+[Unit]
+Description=uWSGI Emperor service for Treehouse
+After=syslog.target
+
+[Service]
+User=ubuntu
+Group=www-data
+Environment=ENV_VAR=<value>
+ExecStart=/home/ubuntu/treehouse/venv/bin/uwsgi --ini /home/ubuntu/ubuntu/prod/uwsgi.ini
+Restart=always
+KillSignal=SIGQUIT
+Type=notify
+StandardError=syslog
+NotifyAccess=all
+TimeoutSec=2400
+
+[Install]
+WantedBy=multi-user.target
