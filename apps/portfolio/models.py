@@ -11,6 +11,8 @@ class Service(models.Model):
     image_url = models.URLField(null=True, blank=True)
     video_url = models.URLField(null=True, blank=True)
     image_path = models.ImageField(upload_to="para_images/", blank=True, null=True)
+    serial = models.SmallIntegerField(default=0)
+    show = models.BooleanField(default=True)
 
 
 class WorkHistory(models.Model):
@@ -23,3 +25,5 @@ class WorkHistory(models.Model):
     video_url = models.URLField(null=True, blank=True)
     image_path = models.ImageField(upload_to="para_images/", blank=True, null=True)
     category = models.TextField(max_length=128, blank=True)
+    serial = models.SmallIntegerField(default=0)
+    show = models.BooleanField(default=True)

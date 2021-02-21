@@ -6,7 +6,9 @@ class ServiceAdmin(admin.ModelAdmin):
 
     list_display = (
         'title',
-        'description'
+        'description',
+        'serial',
+        'show'
     )
 
 
@@ -14,7 +16,9 @@ class WorkHistoryAdmin(admin.ModelAdmin):
 
     list_display = (
         'title',
-        'description'
+        'description',
+        'serial',
+        'show'
     )
 
 

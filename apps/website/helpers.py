@@ -1,3 +1,5 @@
+from django.db.models import Q
+
 
 def get_url(request, prefix, uri):
     return request.build_absolute_uri(prefix + uri)
@@ -25,7 +27,13 @@ def get_nav_urls(request):
 
 def get_objs_with_url(ObjModel, root):
     obj_list = []
-    obj_qs = ObjModel.objects.all().values()
+    obj_qs = ObjModel.objects.filter(
+        Q(show=True)
+    ).order_by(
+        'serial'
+    ).values(
+
+    )
     for obj in obj_qs:
         obj.update({
             'url': root + '?id=' + str(obj['id'])
