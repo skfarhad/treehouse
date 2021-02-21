@@ -1,5 +1,5 @@
-Django==2.2
-djangorestframework==3.8.2
+Django==2.2.5
+djangorestframework==3.9.2
 django-cors-headers
 django-filter
 djangorestframework-jwt
