@@ -1,13 +1,7 @@
 Django==2.2.13
 djangorestframework==3.9.2
-django-cors-headers
-django-filter
 djangorestframework-jwt
 Pillow
-django-rest-swagger
-django-mptt==0.9.1
-django-background-tasks==1.2.0
 gunicorn==19.9.0
-sentry-sdk==0.10.2
-polyline==1.4.0
+
 

@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "treehouse"
+version = "0.1.0"
+description = "\"Sk. Farhad's personal website\""
+authors = ["Sk Farhad <sk.farhad.eee@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+django = "2.2.13"
+djangorestframework = "3.9.2"
+djangorestframework-jwt = "1.11.0"
+pillow = "10.4.0"
+gunicorn = "19.9.0"
+gevent = "^23.0.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
