@@ -10,7 +10,7 @@ urlpatterns = [
     # path('user/', include('apps.user.urls')),
     # path('blog/', include('apps.blog.urls')),
     path('website/', include('apps.website.urls')),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 admin.site.site_header = "Treehouse Admin"
 admin.site.site_title = "Treehouse Admin Portal"

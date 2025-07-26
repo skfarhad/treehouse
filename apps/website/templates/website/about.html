@@ -1,4 +1,5 @@
 {% extends 'website/base.html' %}
+{% load static %}
 
 {% block title %}
 	<title>About</title>
@@ -42,6 +43,11 @@
                             for Pharmaceutical utilizing the Power of GenAI.
 
                         </p>
+                        <p>
+                            <img src="{% static 'website/initio/assets/images/iqvia_cricket_w1.jpg' %}"
+                                alt="" class="" width="100%" >
+                            A happy moment after winning a match with IQVIA teammates!
+                        </p>
                         <h3 ><a href="http://www.dingi.tech/">ACI Limited</a>,
                             Dhaka — AI/Machine Learning Architect</h3>
                         <h4 >September, 2020 - May, 2023</h4>
@@ -58,12 +64,26 @@
                             <br><br>Guided a team of AI professionals to solve the complex problems
                             of ACI businesses. Also working with ACI business professionals from different fields
                             help them to adapt to data driven technologies to improve KPI.<br>
+                        </p>
+                        <p>
+                            <img src="{% static 'website/initio/assets/images/aci_with_team.jpg' %}"
+                                alt="" class="" width="100%" >
+                            With my Python/ML team members!
+                        </p>
+                        <p>
 
                             <br><br>Worked with user behavior data from Bangladesh’s one of the biggest retail chains-
                             <a href="https://www.shwapno.com/">Shwapno</a> owned by ACI. Coordinated a small team of AI developers
                             and Analysts to perform Customer segmentation, Churn analysis, Basket analysis, Purchase prediction.
 
                         </p>
+
+                        <p>
+                            <img src="{% static 'website/initio/assets/images/aci_office_farewell.jpg' %}"
+                                alt="" class="" width="100%" >
+                            My farewell party at ACI!
+                        </p>
+
                         <h3 ><a href="http://www.dingi.tech/">Dingi Technologies Ltd.</a>,
                             Dhaka — Lead, IoT & Enterprise</h3>
                         <h4 >September 2017 - September 2020</h4>
@@ -90,7 +110,7 @@
 
                         </p>
                         <p>
-                            <img src="/media/initio/assets/images/cover_photo.jpeg"
+                            <img src="{% static 'website/initio/assets/images/cover_photo.jpeg' %}"
                                 alt="" class="" width="100%" >
                             Working with great intensity there!
                         </p>
@@ -155,7 +175,7 @@
                         </p>
 
                         <p>
-                            <img src="/media/initio/assets/images/cover_photo_convo.jpg"
+                            <img src="{% static 'website/initio/assets/images/cover_photo_convo.jpg' %}"
                                 alt="" class="" width="100%" >
                             A nice photo challenge for you. See if you can find me in this picture!
                         </p>

@@ -5,6 +5,7 @@ FROM python:3.9-slim
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
+
 # Set the working directory in the container
 WORKDIR /app
 
@@ -13,6 +14,7 @@ RUN apt-get update && apt-get install -y \
     gcc \
     python3-dev \
     curl \
+    cron \
     && rm -rf /var/lib/apt/lists/*
 
 
@@ -40,7 +42,6 @@ RUN poetry install --no-root
 # Copy the current directory contents into the container at /app/
 
 COPY . /app/
-
 
 RUN chmod +x ./entrypoint_web.sh
 #RUN git update-index --chmod=+x ./run_tests.sh

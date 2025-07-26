@@ -19,4 +19,3 @@ python manage.py collectstatic --noinput
 # Start Gunicorn
 echo "🚀 Starting Gunicorn server..."
 gunicorn -c conf/gunicorn.conf.py conf.wsgi:application
-

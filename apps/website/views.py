@@ -15,7 +15,7 @@ class ContextPage(View):
 
     def get(self, request, format=None):
         context = self.get_context(request)
-        return render(request, self.template_path, {'context': context}, 200)
+        return render(request, self.template_path, context={'context': context}, status=200)
 
 
 class DetailsPage(View):
@@ -35,7 +35,7 @@ class DetailsPage(View):
             self.url_suffix: obj_values
         })
         # print(context)
-        return render(request, self.template_path, {'context': context}, 200)
+        return render(request, self.template_path, context={'context': context}, status=200)
 
 
 class HomePage(ContextPage):
