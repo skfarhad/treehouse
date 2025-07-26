@@ -5,7 +5,7 @@
         "watchPatterns": [
             "/pyproject.toml",
             "apps/**",
-            "config/**",
+            "conf/**",
             "railway.json",
             "/web.Dockerfile"
         ]
