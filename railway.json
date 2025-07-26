@@ -1,0 +1,13 @@
+{
+    "build": {
+        "builder": "DOCKERFILE",
+        "dockerfilePath": "./web.Dockerfile",
+        "watchPatterns": [
+            "/pyproject.toml",
+            "apps/**",
+            "config/**",
+            "railway.json",
+            "/web.Dockerfile"
+        ]
+    }
+}
