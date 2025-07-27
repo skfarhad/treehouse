@@ -7,7 +7,7 @@
 	<meta name="description" content="">
 	<meta name="author"      content="Sergey Pozhilov (GetTemplate.com)">
 
-	<link rel="shortcut icon" href="{% static 'website/initio/assets/images/gt_favicon.png' %}">
+	<link rel="shortcut icon" href="{% static 'website/assets/images/gt_favicon.png' %}">
     {% block title %}
     {% endblock title %}
 	<!-- Bootstrap -->
@@ -18,10 +18,10 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alice|Open+Sans:400,300,700">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 	<!-- Custom styles -->
-	<link rel="stylesheet" href="{% static 'website/initio/assets/css/styles.css' %}">
+	<link rel="stylesheet" href="{% static 'website/assets/css/styles.css' %}">
 
 	<!--[if lt IE 9]>
-    <script src="{% static 'website/initio/assets/js/html5shiv.js' %}"></script> <![endif]-->
+    <script src="{% static 'website/assets/js/html5shiv.js' %}"></script> <![endif]-->
 </head>
 
 <body>
@@ -29,7 +29,7 @@
         <header id="header">
             <div id="head" class="parallax" parallax-speed="2">
                 <h1 id="logo" class="text-center">
-                    <img class="img-circle" src="{% static 'website/initio/assets/images/round_pic5.jpg' %}" alt="">
+                    <img class="img-circle" src="{% static 'website/assets/images/round_pic5.jpg' %}" alt="">
                     <span class="title">Hey! I'm Sk. Farhad Uddin Ahmed</span>
                     <span class="tagline">Lead Software Engineer, AI Expert, Researcher and A Father!<br>
                     </span>
@@ -55,8 +55,8 @@
                             <li><a href="{{ context.about }}">About</a></li>
                             <li><a href="{{ context.home }}#services">Services</a></li>
                             <li><a href="{{ context.home }}#recent-works">Recent Works</a></li>
-                            <li><a data-toggle="modal"
-                                   data-target="#myModal"
+                            <li><a href="#" data-toggle="modal"
+                                   data-target="#myModal" style="cursor: pointer;"
                                     >Contact</a></li>
                             <!--
                             <li><a href="{{ context.blog }}">Blog</a></li>
@@ -80,60 +80,65 @@
             <div class="modal" id="myModal">
                 <div class="modal-dialog">
                   <div class="modal-content">
+                      <form action="https://getform.io/f/bpjpwmqb" method="POST">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <div class="widget-body">
+                                <p>You can inbox me directly to my personal email or phone:<br>
+                                    <span class="glyphicon glyphicon-envelope"></span>
+                                    <a href="mailto:#">
+                                        sk.farhad.eee@gmail.com
+                                    </a>
+                                    <br>
+                                    <span class="glyphicon glyphicon-phone"></span>
+                                        +8801787-164706<br>
+                                    You can also use the following form-
+                                </p>
+                            </div>
+                          <h4 class="modal-title">Details</h4>
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
 
-                <!-- Modal Header -->
-                <div class="modal-header">
-                    <div class="widget-body">
-                        <p>You can inbox me directly to my personal email or phone:<br>
-                            <span class="glyphicon glyphicon-envelope"></span>
-                            <a href="mailto:#">
-                                sk.farhad.eee@gmail.com
-                            </a>
-                            <br>
-                            <span class="glyphicon glyphicon-phone"></span>
-                                +8801787-164706<br>
-                            You can also use the following form-
-                        </p>
-                    </div>
-                  <h4 class="modal-title">Details</h4>
-                  <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
+                        <!-- Modal body -->
+                        <div class="modal-body">
 
-                <!-- Modal body -->
-                <div class="modal-body">
-                    <div class="form-group">
-                      <label for="email">Email:</label>
-                      <input type="email" class="form-control" id="email"
-                             placeholder="Enter email" name="email">
-                    </div>
+                            <div class="form-group">
+                              <label for="email">Email:</label>
+                              <input type="email" class="form-control" id="email"
+                                     placeholder="Enter email" name="email">
+                            </div>
 
-                    <div class="form-group">
-                      <label for="full-name">Full name:</label>
-                      <input type="password" class="form-control" id="full-name"
-                             placeholder="Enter full name" name="full-name">
-                    </div>
+                            <div class="form-group">
+                              <label for="full-name">Full name:</label>
+                              <input type="text" class="form-control" id="full-name"
+                                     placeholder="Enter full name" name="full-name">
+                            </div>
 
-                    <div class="form-group">
-                      <label for="subject">Subject:</label>
-                      <input type="text" class="form-control" id="subject"
-                             placeholder="Mention Subject" name="subject">
-                    </div>
+                            <div class="form-group">
+                              <label for="subject">Subject:</label>
+                              <input type="text" class="form-control" id="subject"
+                                     placeholder="Mention Subject" name="subject">
+                            </div>
 
-                    <div class="form-group">
-                      <label for="email-body">Message:</label>
-                      <textarea class="form-control" rows="5" id="email-body"
-                             name="email-body">
-                      </textarea>
-                    </div>
+                            <div class="form-group">
+                                <input type="hidden" name="_gotcha" style="display:none !important">
+                            </div>
 
-                </div>
+                            <div class="form-group">
+                              <label for="email-body">Message:</label>
+                              <textarea class="form-control" rows="5" id="email-body"
+                                     name="email-body">
+                              </textarea>
+                            </div>
 
-                <!-- Modal footer -->
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-success" data-dismiss="modal">SEND</button>
-                   <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                </div>
+                        </div>
 
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-success">SEND</button>
+                           <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        </div>
+                      </form>
                   </div>
                 </div>
             </div>
@@ -220,9 +225,9 @@
     </footer>
 
     <!-- JavaScript libs are placed at the end of the document so the pages load faster -->
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-    <script src="{% static 'website/initio/assets/js/template.js' %}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="{% static 'website/assets/js/template.js' %}"></script>
 
 </body>
 </html>
