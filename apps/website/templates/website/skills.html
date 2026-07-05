@@ -10,32 +10,342 @@
             <div class="row topspace">
                 <article class="col-sm-12 maincontent">
                     <div id="tech_skills">
+                        <style>
+                            #tech_skills .skill-intro {
+                                font-size: 15px;
+                            }
+                            #tech_skills .skill-sections {
+                                margin-top: 20px;
+                                border-top: 1px solid #ececec;
+                            }
+                            #tech_skills .skill-section {
+                                display: flex;
+                                flex-wrap: wrap;
+                                gap: 18px;
+                                padding: 24px 0;
+                                border-bottom: 1px solid #ececec;
+                                transition: background 0.2s ease;
+                            }
+                            #tech_skills .skill-section:hover {
+                                background: #fafafa;
+                            }
+                            #tech_skills .skill-label {
+                                flex: 0 0 100%;
+                                display: flex;
+                                align-items: center;
+                                gap: 12px;
+                            }
+                            @media (min-width: 700px) {
+                                #tech_skills .skill-label {
+                                    flex: 0 0 230px;
+                                    max-width: 230px;
+                                }
+                            }
+                            #tech_skills .skill-icon {
+                                flex: 0 0 40px;
+                                width: 40px;
+                                height: 40px;
+                                border-radius: 50%;
+                                background: #fdeaf0;
+                                color: #bd1550;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                font-size: 16px;
+                            }
+                            #tech_skills .skill-body {
+                                flex: 1 1 320px;
+                                min-width: 0;
+                            }
+                            #tech_skills .skill-section h3 {
+                                margin: 0;
+                                font-size: 16px;
+                                font-weight: bold;
+                            }
+                            #tech_skills .skill-body p {
+                                font-size: 13px;
+                                color: #666;
+                                margin: 0 0 12px;
+                            }
+                            #tech_skills .skill-tags {
+                                display: flex;
+                                flex-wrap: wrap;
+                                gap: 6px;
+                                margin: 0 0 14px;
+                                padding: 0;
+                                list-style: none;
+                            }
+                            #tech_skills .skill-tags li {
+                                font-size: 12px;
+                                font-weight: 600;
+                                padding: 4px 11px;
+                                border-radius: 20px;
+                                background: #f3f3f3;
+                                color: #444;
+                            }
+                            #tech_skills .skill-used {
+                                display: flex;
+                                flex-wrap: wrap;
+                                gap: 6px;
+                                align-items: center;
+                                border-top: 1px dashed #e5e5e5;
+                                padding-top: 12px;
+                            }
+                            #tech_skills .skill-used span.label-lead {
+                                font-size: 11px;
+                                text-transform: uppercase;
+                                letter-spacing: 0.05em;
+                                color: #999;
+                                margin-right: 4px;
+                            }
+                            #tech_skills .skill-used a {
+                                font-size: 12px;
+                                font-weight: 600;
+                                padding: 4px 11px;
+                                border-radius: 20px;
+                                background: #fdeaf0;
+                                color: #bd1550;
+                                border: 1px solid #f6c8da;
+                                text-decoration: none;
+                                transition: background 0.2s ease, color 0.2s ease;
+                            }
+                            #tech_skills .skill-used a:hover {
+                                background: #bd1550;
+                                color: #fff;
+                                border-color: #bd1550;
+                            }
+                            #tech_skills .skill-used a i {
+                                margin-left: 4px;
+                            }
+                        </style>
+
                         <h1>Technical Skills</h1>
-                        <p>
-                            Working in the Software industry for 9+ years. Mainly focused on
-                            Back-End and server-side technologies. Developed APIs and
-                            server automation for industry grade web and mobile
-                            applications for location based services & E-commerce platforms.
-                            Also working with cutting edge AI/Machine Learning technologies,
-                            Large Language Models and Agentic AI libraries.
-                            Some details about my skill-set:
+                        <p class="skill-intro">
+                            9+ years in the software industry, mainly on the back-end and
+                            server side — designing APIs, automating servers and scaling
+                            infrastructure for location-based services and e-commerce
+                            platforms at companies like Techjays, IQVIA and Dingi. Over the
+                            last few years that's expanded into the AI/ML side: building
+                            with Large Language Models and shipping agentic AI systems using
+                            LangChain and LangGraph, both for clients and for products I've
+                            built solo end-to-end, like ChatExpense. Below is the stack
+                            broken into categories, each with the actual project it shipped in:
                         </p>
-                        <ul>
-                            <li>Programming Languages: Python, JavaScript, C#</li>
-                            <li>Back-End Frameworks/Libraries: Django, FastAPI, Flask, Node.js</li>
-                            <li>Front-End: React, Next.js, Django templates, jQuery, HTML, CSS, Bootstrap</li>
-                            <li>Relational Databases: PostgreSQL, MS SQL Server, Snowflake</li>
-                            <li>NoSQL/Document Databases: MongoDB, DynamoDB</li>
-                            <li>Vector Databases: Pinecone, Qdrant, ChromaDB</li>
-                            <li>Caching: Redis, Memcached</li>
-                            <li>AI/ML & Data Science: PyTorch, scikit-learn, YOLO, Sentence Transformers</li>
-                            <li>Agentic AI: LangChain, LangGraph, AWS Bedrock</li>
-                            <li>Task Automation/Messaging: RabbitMQ, Celery, Socket.io</li>
-                            <li>DevOps/Containerization: Docker, Kubernetes, Helm, GitLab CI</li>
-                            <li>Servers: Gunicorn, uWSGI, Nginx</li>
-                            <li>Cloud Services: AWS (EC2, RDS, DynamoDB, Lambda, S3, ECR, EKS, ELB), Azure (Cosmos DB, Embedded Power BI)</li>
-                            <li>Monitoring/Tools: Grafana, Elasticsearch/Kibana, Sentry</li>
-                        </ul>
+
+                        <div class="skill-sections">
+                            <div class="skill-section">
+                                <div class="skill-label">
+                                    <span class="skill-icon"><i class="fa-solid fa-code"></i></span>
+                                    <h3>Programming Languages</h3>
+                                </div>
+                                <div class="skill-body">
+                                    <p>Python first, always — it's what I reach for whether
+                                    I'm building an API, an AI agent, or a data pipeline.
+                                    I used it end-to-end for <a href="{{ context.work_details }}?id=5">stocksurferbd</a>,
+                                    scraping and modeling Dhaka & Chittagong Stock Exchange
+                                    data and publishing it as a PyPI package. JavaScript and
+                                    C# fill in for front-end work and integration scripting
+                                    when a project needs them.</p>
+                                    <ul class="skill-tags">
+                                        <li>Python</li><li>JavaScript</li><li>C#</li>
+                                    </ul>
+                                    <div class="skill-used">
+                                        <span class="label-lead">Shipped in</span>
+                                        <a href="{{ context.work_details }}?id=1">ChatExpense <i class="fa-solid fa-arrow-right"></i></a>
+                                        <a href="{{ context.work_details }}?id=5">stocksurferbd <i class="fa-solid fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="skill-section">
+                                <div class="skill-label">
+                                    <span class="skill-icon"><i class="fa-solid fa-server"></i></span>
+                                    <h3>Back-End & APIs</h3>
+                                </div>
+                                <div class="skill-body">
+                                    <p>Django and Django REST Framework are my default for
+                                    production APIs. I built the entire
+                                    <a href="{{ context.work_details }}?id=1">ChatExpense</a>
+                                    backend on DRF with async support, wiring in OpenAI for
+                                    voice/chat/receipt-image expense entry — it's since grown
+                                    to 1,300+ web users and 100+ Play Store installs, cutting
+                                    logging time by up to 70%. The same stack drives the
+                                    <a href="{{ context.work_details }}?id=4">Hazard Reporting System</a>'s
+                                    incident and volunteer APIs, and the QR-driven maintenance
+                                    logging behind <a href="{{ context.work_details }}?id=6">ScanFixNow</a>.
+                                    FastAPI, Flask and Node.js cover lighter services and integrations.</p>
+                                    <ul class="skill-tags">
+                                        <li>Django</li><li>DRF</li><li>FastAPI</li><li>Flask</li><li>Node.js</li>
+                                    </ul>
+                                    <div class="skill-used">
+                                        <span class="label-lead">Shipped in</span>
+                                        <a href="{{ context.work_details }}?id=1">ChatExpense <i class="fa-solid fa-arrow-right"></i></a>
+                                        <a href="{{ context.work_details }}?id=4">Hazard Reporting System <i class="fa-solid fa-arrow-right"></i></a>
+                                        <a href="{{ context.work_details }}?id=6">ScanFixNow <i class="fa-solid fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="skill-section">
+                                <div class="skill-label">
+                                    <span class="skill-icon"><i class="fa-solid fa-palette"></i></span>
+                                    <h3>Front-End</h3>
+                                </div>
+                                <div class="skill-body">
+                                    <p>Just enough UI to make the back-end usable — I'm a
+                                    backend engineer first, but I've shipped the customer-facing
+                                    screens for <a href="{{ context.work_details }}?id=1">ChatExpense</a>
+                                    and <a href="{{ context.work_details }}?id=6">ScanFixNow</a>
+                                    myself rather than waiting on a dedicated front-end hire.
+                                    React and Next.js for anything component-heavy, Django
+                                    templates and jQuery when server-rendered is simpler, and
+                                    Bootstrap to get a clean layout out fast (this site included).</p>
+                                    <ul class="skill-tags">
+                                        <li>React</li><li>Next.js</li><li>Django Templates</li><li>jQuery</li><li>Bootstrap</li>
+                                    </ul>
+                                    <div class="skill-used">
+                                        <span class="label-lead">Shipped in</span>
+                                        <a href="{{ context.work_details }}?id=1">ChatExpense <i class="fa-solid fa-arrow-right"></i></a>
+                                        <a href="{{ context.work_details }}?id=6">ScanFixNow <i class="fa-solid fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="skill-section">
+                                <div class="skill-label">
+                                    <span class="skill-icon"><i class="fa-solid fa-database"></i></span>
+                                    <h3>Databases & Caching</h3>
+                                </div>
+                                <div class="skill-body">
+                                    <p>Relational databases stay the source of truth —
+                                    PostgreSQL underpins <a href="{{ context.work_details }}?id=1">ChatExpense</a>'s
+                                    async DRF backend and the
+                                    <a href="{{ context.work_details }}?id=4">Hazard Reporting System</a>'s
+                                    incident/volunteer store, alongside MS SQL Server and
+                                    Snowflake on client projects. MongoDB and DynamoDB cover
+                                    document workloads; Pinecone, Qdrant and ChromaDB handle
+                                    retrieval-augmented generation for agentic AI builds; Redis
+                                    and Memcached keep the hot paths fast.</p>
+                                    <ul class="skill-tags">
+                                        <li>PostgreSQL</li><li>MS SQL</li><li>Snowflake</li><li>MongoDB</li><li>DynamoDB</li><li>Pinecone</li><li>Qdrant</li><li>ChromaDB</li><li>Redis</li>
+                                    </ul>
+                                    <div class="skill-used">
+                                        <span class="label-lead">Shipped in</span>
+                                        <a href="{{ context.work_details }}?id=1">ChatExpense <i class="fa-solid fa-arrow-right"></i></a>
+                                        <a href="{{ context.work_details }}?id=4">Hazard Reporting System <i class="fa-solid fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="skill-section">
+                                <div class="skill-label">
+                                    <span class="skill-icon"><i class="fa-solid fa-robot"></i></span>
+                                    <h3>AI/ML & Agentic AI</h3>
+                                </div>
+                                <div class="skill-body">
+                                    <p>LangChain and LangGraph are what I reach for when a
+                                    problem needs an agent, not just a prompt. The multi-agent
+                                    pipeline I built for <a href="{{ context.work_details }}?id=1">ChatExpense</a>
+                                    handles insight generation, spending-pattern detection,
+                                    chart building and smart query answering on top of
+                                    OpenAI's voice, chat and image APIs — turning a raw receipt
+                                    photo or voice note into a categorized transaction and a
+                                    personalized recommendation. PyTorch, scikit-learn, YOLO
+                                    and Sentence Transformers cover the classic ML side when a
+                                    trained model beats an LLM call.</p>
+                                    <ul class="skill-tags">
+                                        <li>LangChain</li><li>LangGraph</li><li>AWS Bedrock</li><li>PyTorch</li><li>scikit-learn</li><li>YOLO</li>
+                                    </ul>
+                                    <div class="skill-used">
+                                        <span class="label-lead">Shipped in</span>
+                                        <a href="{{ context.work_details }}?id=1">ChatExpense <i class="fa-solid fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="skill-section">
+                                <div class="skill-label">
+                                    <span class="skill-icon"><i class="fa-solid fa-bolt"></i></span>
+                                    <h3>Automation & Messaging</h3>
+                                </div>
+                                <div class="skill-body">
+                                    <p>Async workers and queues for anything that shouldn't
+                                    block a request. Comparable background-processing logic
+                                    powers the <a href="{{ context.work_details }}?id=4">Hazard Reporting System</a>'s
+                                    volunteer-matching engine, which automatically pairs
+                                    distressed callers with the nearest available volunteer
+                                    based on distance and availability. Celery also drives
+                                    scheduled campaign broadcasts on a WhatsApp automation
+                                    platform I built, and Socket.io covers real-time updates
+                                    when polling isn't fast enough.</p>
+                                    <ul class="skill-tags">
+                                        <li>Celery</li><li>RabbitMQ</li><li>Socket.io</li>
+                                    </ul>
+                                    <div class="skill-used">
+                                        <span class="label-lead">Shipped in</span>
+                                        <a href="{{ context.work_details }}?id=4">Hazard Reporting System <i class="fa-solid fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="skill-section">
+                                <div class="skill-label">
+                                    <span class="skill-icon"><i class="fa-solid fa-cloud"></i></span>
+                                    <h3>DevOps, Servers & Cloud</h3>
+                                </div>
+                                <div class="skill-body">
+                                    <p>Docker and Kubernetes for shipping, Gunicorn/uWSGI and
+                                    Nginx tuned for cost and scale on the server side. I used
+                                    that combination — plus reduced file-system I/O and
+                                    introduced test coverage — to cut server costs by 50%
+                                    while scaling <a href="{{ context.work_details }}?id=3">Dingi Map APIs</a>
+                                    on AWS ELB and Autoscaling to a few hundred requests per
+                                    second for high-profile clients like Shohoz.com.
+                                    <a href="{{ context.work_details }}?id=1">ChatExpense</a>
+                                    runs on Railway with Stripe/Bkash payment integrations.
+                                    AWS (EC2, RDS, Lambda, S3, ECR, EKS) and Azure (Cosmos DB,
+                                    Embedded Power BI) round out the cloud side.</p>
+                                    <ul class="skill-tags">
+                                        <li>Docker</li><li>Kubernetes</li><li>GitLab CI</li><li>Gunicorn</li><li>uWSGI</li><li>Nginx</li><li>AWS</li><li>Azure</li>
+                                    </ul>
+                                    <div class="skill-used">
+                                        <span class="label-lead">Shipped in</span>
+                                        <a href="{{ context.work_details }}?id=3">Dingi Map APIs <i class="fa-solid fa-arrow-right"></i></a>
+                                        <a href="{{ context.work_details }}?id=1">ChatExpense <i class="fa-solid fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="skill-section">
+                                <div class="skill-label">
+                                    <span class="skill-icon"><i class="fa-solid fa-chart-line"></i></span>
+                                    <h3>Monitoring & Observability</h3>
+                                </div>
+                                <div class="skill-body">
+                                    <p>Because "it works on my machine" isn't a production
+                                    strategy. Grafana dashboards and Elasticsearch/Kibana for
+                                    tracking system health and digging through logs at scale,
+                                    Sentry for catching and triaging exceptions before users
+                                    have to report them — the kind of visibility that turns a
+                                    3am page into a five-minute fix instead of a fire drill.</p>
+                                    <ul class="skill-tags">
+                                        <li>Grafana</li><li>Elasticsearch</li><li>Kibana</li><li>Sentry</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p style="margin-top:6px;">
+                            <strong>A few numbers from the field:</strong>
+                            1,300+ registered users and 100+ Play Store installs on
+                            <a href="{{ context.work_details }}?id=1">ChatExpense</a>,
+                            up to 70% less time spent logging expenses, a 50% server-cost
+                            cut while scaling
+                            <a href="{{ context.work_details }}?id=3">Dingi Map APIs</a>
+                            to a few hundred requests per second for clients like
+                            Shohoz.com, and a published PyPI package,
+                            <a href="{{ context.work_details }}?id=5">stocksurferbd</a>.
+                        </p>
                     </div>
                 </article>
             </div>
