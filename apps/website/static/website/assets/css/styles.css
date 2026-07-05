@@ -365,6 +365,13 @@ img {
 .panel-cta .panel-body {
   padding: 15px 35px;
 }
+@media (min-width: 1200px) {
+  .panel-cta .panel-body {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
 /* Section - Featured */
 .featured {
   font-size: 13px;
