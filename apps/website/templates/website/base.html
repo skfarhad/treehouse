@@ -53,7 +53,7 @@
                             <li{% if request.resolver_match.url_name == 'home_template' %} class="active"{% endif %}><a href="{{ context.home }}">Home</a></li>
                             <li{% if request.resolver_match.url_name == 'about_template' %} class="active"{% endif %}><a href="{{ context.about }}">About</a></li>
                             <li{% if request.resolver_match.url_name == 'services_template' %} class="active"{% endif %}><a href="{{ context.services_url }}">Services</a></li>
-                            <li><a href="{{ context.home }}#recent-works">Recent Works</a></li>
+                            <li{% if request.resolver_match.url_name == 'projects_template' %} class="active"{% endif %}><a href="{{ context.projects_url }}">Projects</a></li>
                             <li><a href="#" data-toggle="modal"
                                    data-target="#myModal" style="cursor: pointer;"
                                     >Contact</a></li>

@@ -51,29 +51,25 @@
             </div> <!-- / section -->
 
             <div id="recent-works" class="row section recentworks topspace">
-                <h2 class="section-title"><span>Recent Works</span></h2>
+                <h2 class="section-title"><span>Recent Projects</span></h2>
                 <div class="thumbnails recentworks row">
-                    {% for work in context.recent_works %}
+                    {% for work in context.recent_works|slice:":3" %}
 
                     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
                         <a class="thumbnail" href="{{ work.url }}">
                             <span class="img">
-                                <img src="{{ work.image_url }}" alt="">
+                                <img src="{{ work.image_url }}" alt="{{ work.title }}">
                                 <span class="cover"><span class="more">See details &rarr;</span></span>
                             </span>
                             <span class="title">{{ work.title }}</span>
                         </a>
-                        <span class="details">
-                            <a href="">Web design</a> |
-                            <a href="">API development</a> |
-                            <a href="">Automation</a>
-                        </span>
-                        <h4></h4>
-                        <p></p>
                     </div>
 
                     {% endfor %}
                 </div>
+                <p class="text-center">
+                    <a href="{{ context.projects_url }}" class="btn btn-action">View all projects</a>
+                </p>
             </div> <!-- /section -->
 
             <!--div class="row section clients topspace">

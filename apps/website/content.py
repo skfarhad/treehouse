@@ -394,7 +394,7 @@ As the founder and technical architect of the Hazard Reporting System, I initiat
         "serial": 3,
         "show": True,
         "category": "",
-        "image_url": """https://raw.githubusercontent.com/skfarhad/stocksurferbd/refs/heads/master/price_plot_1d.png""",
+        "image_url": """https://raw.githubusercontent.com/skfarhad/stocksurferbd/refs/heads/main/price_plot_1d.png""",
         "image_path": "",
         "video_url": None,
         "description": """
