@@ -40,10 +40,18 @@ only as a backup of the original data.
 - Do NOT hardcode secrets or default DEBUG on. Do NOT republish the personal
   home address or phone in `base.html` (privacy — business email only).
 
+## Front-end assets
+
+- Bootstrap 3.4.1 CSS/JS and jQuery 1.12.4 are **self-hosted** under
+  `apps/website/static/website/assets/` (the dead `netdna.bootstrapcdn.com`
+  CDN is gone). Glyphicons fonts are vendored so `collectstatic` (WhiteNoise
+  manifest) can rewrite the CSS `url()`s. Font Awesome 6 + Google Fonts still
+  load from live CDNs. Do NOT reintroduce a dead/removed CDN.
+
 ## Known issues still open
 
-- Dead CDN: `netdna.bootstrapcdn.com` (Bootstrap 3 / jQuery 1.10). Footer mixes
-  Bootstrap 5 utility classes onto a Bootstrap 3 grid. Tracked in the roadmap.
+- Footer mixes Bootstrap 5 utility classes (`col-12`, `me-2`, `mb-4`) onto the
+  Bootstrap 3 grid — cosmetic spacing only. Tracked in the roadmap.
 
 ## Conventions
 

@@ -35,7 +35,9 @@ Ordered by priority. Checkboxes track state.
 
 ## Then — frontend credibility
 
-- [ ] Replace dead `netdna.bootstrapcdn.com` assets (self-host or modern CDN).
+- [x] Replace dead `netdna.bootstrapcdn.com` assets — self-hosted Bootstrap
+      3.4.1 + jQuery 1.12.4 (with vendored Glyphicons fonts). Verified in a
+      browser: modal + navbar work, no console errors.
 - [ ] Fix Bootstrap 3 vs 5 class mismatch in the footer.
 - [ ] Real `<title>` / meta description / Open Graph tags; fix `author` meta.
 - [ ] Proofread About page typos ("Elesticsearch", "applicationscan", "s piral").

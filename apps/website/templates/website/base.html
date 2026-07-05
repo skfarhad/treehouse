@@ -10,12 +10,11 @@
 	<link rel="shortcut icon" href="{% static 'website/assets/images/gt_favicon.png' %}">
     {% block title %}
     {% endblock title %}
-	<!-- Bootstrap -->
-	<link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.no-icons.min.css" rel="stylesheet">
-	<!-- Icons -->
-	<link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+	<!-- Bootstrap 3.4.1 (self-hosted) -->
+	<link href="{% static 'website/assets/css/bootstrap.min.css' %}" rel="stylesheet">
 	<!-- Fonts -->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alice|Open+Sans:400,300,700">
+	<!-- Icons (Font Awesome 6) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 	<!-- Custom styles -->
 	<link rel="stylesheet" href="{% static 'website/assets/css/styles.css' %}">
@@ -85,7 +84,7 @@
                         <div class="modal-header">
                             <div class="widget-body">
                                 <p>You can reach me directly by email:<br>
-                                    <span class="glyphicon glyphicon-envelope"></span>
+                                    <i class="fa-solid fa-envelope"></i>
                                     <a href="mailto:sk.farhad.eee@gmail.com">
                                         sk.farhad.eee@gmail.com
                                     </a>
@@ -171,7 +170,7 @@
                     <div class="widget-body">
                         <p>
                             Dhaka, Bangladesh<br>
-                            <span class="glyphicon glyphicon-envelope"></span>
+                            <i class="fa-solid fa-envelope"></i>
                             <a href="mailto:farhad@techjays.com">farhad@techjays.com</a>
                         </p>
                     </div>
@@ -183,7 +182,7 @@
                     <div class="widget-body">
                         <p>
                             Dhaka, Bangladesh<br>
-                            <span class="glyphicon glyphicon-envelope"></span>
+                            <i class="fa-solid fa-envelope"></i>
                             <a href="mailto:sk.farhad.eee@gmail.com">sk.farhad.eee@gmail.com</a>
                         </p>
                     </div>
@@ -218,8 +217,8 @@
     </footer>
 
     <!-- JavaScript libs are placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="{% static 'website/assets/js/jquery.min.js' %}"></script>
+    <script src="{% static 'website/assets/js/bootstrap.min.js' %}"></script>
     <script src="{% static 'website/assets/js/template.js' %}"></script>
 
 </body>
