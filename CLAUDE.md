@@ -12,7 +12,7 @@ Owner: Sk. Farhad Uddin Ahmed — Lead Software Engineer & AI Expert (IQVIA).
 
 ## Current architecture
 
-- **Django 4.2** (`conf/settings.py`, `conf/settings_prod.py`), Python 3.9, Poetry.
+- **Django 4.2**, single env-driven `conf/settings.py`, Python 3.9, Poetry.
 - **No database.** `DATABASES = {}`. Site content lives in
   `apps/website/content.py` (short bio, services, works). There is no ORM,
   admin, auth, or sessions.
@@ -30,18 +30,20 @@ Owner: Sk. Farhad Uddin Ahmed — Lead Software Engineer & AI Expert (IQVIA).
 (see `.claude/product/roadmap.md`). `backend.db` is kept locally, untracked,
 only as a backup of the original data.
 
-## Known issues to respect (do not regress)
+## Security posture (do not regress)
 
-- `SECRET_KEY` is hardcoded in `conf/settings.py` — should move to env var.
-  (Lower risk now that there are no sessions/auth, but still fix it.)
-- `DEBUG=True` in base settings; no prod security headers beyond defaults.
-- Personal home address + phone are published in `base.html` footer — a privacy
-  issue; keep business contact only.
+- `SECRET_KEY`, `DEBUG`, and `ALLOWED_HOSTS` are environment-driven in
+  `conf/settings.py`. DEBUG defaults OFF; prod requires `DJANGO_SECRET_KEY`
+  (raises if missing). Local dev: set `DJANGO_DEBUG=1`. See `.env.example`.
+- Prod (DEBUG off) enables SSL redirect + HSTS + nosniff + `X-Frame-Options`,
+  with `SECURE_PROXY_SSL_HEADER` for Railway's TLS-terminating proxy.
+- Do NOT hardcode secrets or default DEBUG on. Do NOT republish the personal
+  home address or phone in `base.html` (privacy — business email only).
+
+## Known issues still open
+
 - Dead CDN: `netdna.bootstrapcdn.com` (Bootstrap 3 / jQuery 1.10). Footer mixes
-  Bootstrap 5 utility classes onto a Bootstrap 3 grid.
-
-These are tracked in the roadmap; fix them deliberately, don't silently
-reintroduce.
+  Bootstrap 5 utility classes onto a Bootstrap 3 grid. Tracked in the roadmap.
 
 ## Conventions
 

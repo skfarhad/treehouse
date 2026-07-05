@@ -26,6 +26,9 @@ staticfiles/*
 # backend.db is kept locally only as a source-of-truth backup of the old data.
 *.db
 
+# Local environment variables (secrets). See .env.example for the template.
+.env
+
 *.py[cod]
 *$py.class
 

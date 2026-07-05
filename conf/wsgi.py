@@ -1,16 +1,13 @@
-"""
-WSGI config for mylighthouse project.
+"""WSGI config — exposes the module-level ``application`` callable.
 
-It exposes the WSGI callable as a module-level variable named ``application``.
-
-For more information on this file, see
-https://docs.djangoproject.com/en/1.11/howto/deployment/wsgi/
+Production posture (DEBUG, SECRET_KEY, security headers) is driven by
+environment variables in ``conf/settings.py``. See ``.env.example``.
 """
 
 import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "conf.settings_prod")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "conf.settings")
 
 application = get_wsgi_application()

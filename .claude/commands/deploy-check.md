@@ -5,11 +5,13 @@ description: Run pre-deploy safety and security checks before shipping
 Run the pre-deploy checklist for the production site. Report a clear pass/fail
 summary; do not deploy anything.
 
-1. `poetry run python manage.py check --deploy --settings=conf.settings_prod`
-   — surface every security warning.
-2. Confirm `DEBUG` is `False` in the prod settings path.
-3. Confirm `SECRET_KEY` is sourced from an environment variable, not hardcoded.
-4. Confirm `ALLOWED_HOSTS` is restricted (not `['*']`) for prod.
+1. `DJANGO_SECRET_KEY=dummy-for-check poetry run python manage.py check --deploy`
+   — DEBUG defaults off, so this exercises the production posture; surface
+   every security warning. (The dummy key just lets the check boot.)
+2. Confirm `DEBUG` defaults to `False` (only on when `DJANGO_DEBUG` is set).
+3. Confirm `SECRET_KEY` is sourced from `DJANGO_SECRET_KEY`, not hardcoded, and
+   that production raises if it is missing.
+4. Confirm `ALLOWED_HOSTS` is restricted (not `['*']`).
 5. Confirm no `*.db` files are staged for commit (`git status`).
 6. Confirm no personal home address / personal phone number is present in
    `apps/website/templates/website/base.html`.
