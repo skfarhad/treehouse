@@ -143,9 +143,15 @@
                                     I'm building an API, an AI agent, or a data pipeline.
                                     I used it end-to-end for <a href="{{ context.work_details }}?id=5">stocksurferbd</a>,
                                     scraping and modeling Dhaka & Chittagong Stock Exchange
-                                    data and publishing it as a PyPI package. JavaScript and
-                                    C# fill in for front-end work and integration scripting
-                                    when a project needs them.</p>
+                                    data and publishing it as a PyPI package, and for the
+                                    manipulation-detection engine behind
+                                    <a href="{{ context.work_details }}?id=8">MarketWiki BD</a>.
+                                    On <a href="{{ context.work_details }}?id=9">High Command</a>
+                                    I took Python further than usual — the deterministic game
+                                    core is written once in Python and compiled to JavaScript
+                                    with Transcrypt so the browser runs the exact same logic
+                                    as the server. JavaScript and C# fill in for front-end
+                                    work and integration scripting when a project needs them.</p>
                                     <ul class="skill-tags">
                                         <li>Python</li><li>JavaScript</li><li>C#</li>
                                     </ul>
@@ -153,6 +159,8 @@
                                         <span class="label-lead">Shipped in</span>
                                         <a href="{{ context.work_details }}?id=1">ChatExpense <i class="fa-solid fa-arrow-right"></i></a>
                                         <a href="{{ context.work_details }}?id=5">stocksurferbd <i class="fa-solid fa-arrow-right"></i></a>
+                                        <a href="{{ context.work_details }}?id=8">MarketWiki BD <i class="fa-solid fa-arrow-right"></i></a>
+                                        <a href="{{ context.work_details }}?id=9">High Command <i class="fa-solid fa-arrow-right"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -171,17 +179,29 @@
                                     to 1,300+ web users and 100+ Play Store installs, cutting
                                     logging time by up to 70%. The same stack drives the
                                     <a href="{{ context.work_details }}?id=4">Hazard Reporting System</a>'s
-                                    incident and volunteer APIs, and the QR-driven maintenance
-                                    logging behind <a href="{{ context.work_details }}?id=6">ScanFixNow</a>.
-                                    FastAPI, Flask and Node.js cover lighter services and integrations.</p>
+                                    incident and volunteer APIs, the QR-driven maintenance
+                                    logging behind <a href="{{ context.work_details }}?id=6">ScanFixNow</a>,
+                                    and the surveillance API behind
+                                    <a href="{{ context.work_details }}?id=8">MarketWiki BD</a>.
+                                    For anything that needs to push updates to the browser in
+                                    real time — live game turns on
+                                    <a href="{{ context.work_details }}?id=9">High Command</a>,
+                                    live WhatsApp connection status on
+                                    <a href="{{ context.work_details }}?id=7">Wapptel</a> — I
+                                    reach for Django Channels over WebSockets. FastAPI, Flask
+                                    and Node.js (including a Baileys-based WhatsApp Web
+                                    microservice for Wapptel) cover lighter services and integrations.</p>
                                     <ul class="skill-tags">
-                                        <li>Django</li><li>DRF</li><li>FastAPI</li><li>Flask</li><li>Node.js</li>
+                                        <li>Django</li><li>DRF</li><li>Django Channels</li><li>FastAPI</li><li>Flask</li><li>Node.js</li>
                                     </ul>
                                     <div class="skill-used">
                                         <span class="label-lead">Shipped in</span>
                                         <a href="{{ context.work_details }}?id=1">ChatExpense <i class="fa-solid fa-arrow-right"></i></a>
                                         <a href="{{ context.work_details }}?id=4">Hazard Reporting System <i class="fa-solid fa-arrow-right"></i></a>
                                         <a href="{{ context.work_details }}?id=6">ScanFixNow <i class="fa-solid fa-arrow-right"></i></a>
+                                        <a href="{{ context.work_details }}?id=7">Wapptel <i class="fa-solid fa-arrow-right"></i></a>
+                                        <a href="{{ context.work_details }}?id=8">MarketWiki BD <i class="fa-solid fa-arrow-right"></i></a>
+                                        <a href="{{ context.work_details }}?id=9">High Command <i class="fa-solid fa-arrow-right"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -194,19 +214,25 @@
                                 <div class="skill-body">
                                     <p>Just enough UI to make the back-end usable — I'm a
                                     backend engineer first, but I've shipped the customer-facing
-                                    screens for <a href="{{ context.work_details }}?id=1">ChatExpense</a>
-                                    and <a href="{{ context.work_details }}?id=6">ScanFixNow</a>
+                                    screens for <a href="{{ context.work_details }}?id=1">ChatExpense</a>,
+                                    <a href="{{ context.work_details }}?id=6">ScanFixNow</a> and
+                                    <a href="{{ context.work_details }}?id=8">MarketWiki BD</a>
                                     myself rather than waiting on a dedicated front-end hire.
+                                    <a href="{{ context.work_details }}?id=9">High Command</a>
+                                    needed something different — a real-time game canvas — so
+                                    I built its board with pixi.js instead of a DOM-based UI.
                                     React and Next.js for anything component-heavy, Django
                                     templates and jQuery when server-rendered is simpler, and
                                     Bootstrap to get a clean layout out fast (this site included).</p>
                                     <ul class="skill-tags">
-                                        <li>React</li><li>Next.js</li><li>Django Templates</li><li>jQuery</li><li>Bootstrap</li>
+                                        <li>React</li><li>Next.js</li><li>pixi.js</li><li>Django Templates</li><li>jQuery</li><li>Bootstrap</li>
                                     </ul>
                                     <div class="skill-used">
                                         <span class="label-lead">Shipped in</span>
                                         <a href="{{ context.work_details }}?id=1">ChatExpense <i class="fa-solid fa-arrow-right"></i></a>
                                         <a href="{{ context.work_details }}?id=6">ScanFixNow <i class="fa-solid fa-arrow-right"></i></a>
+                                        <a href="{{ context.work_details }}?id=8">MarketWiki BD <i class="fa-solid fa-arrow-right"></i></a>
+                                        <a href="{{ context.work_details }}?id=9">High Command <i class="fa-solid fa-arrow-right"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -219,20 +245,28 @@
                                 <div class="skill-body">
                                     <p>Relational databases stay the source of truth —
                                     PostgreSQL underpins <a href="{{ context.work_details }}?id=1">ChatExpense</a>'s
-                                    async DRF backend and the
+                                    async DRF backend, the
                                     <a href="{{ context.work_details }}?id=4">Hazard Reporting System</a>'s
-                                    incident/volunteer store, alongside MS SQL Server and
-                                    Snowflake on client projects. MongoDB and DynamoDB cover
-                                    document workloads; Pinecone, Qdrant and ChromaDB handle
-                                    retrieval-augmented generation for agentic AI builds; Redis
-                                    and Memcached keep the hot paths fast.</p>
+                                    incident/volunteer store, and
+                                    <a href="{{ context.work_details }}?id=8">MarketWiki BD</a>'s
+                                    market-data store, alongside MS SQL Server and Snowflake
+                                    on client projects. <a href="{{ context.work_details }}?id=7">Wapptel</a>
+                                    adds PostGIS for location-aware queries, and
+                                    <a href="{{ context.work_details }}?id=9">High Command</a>
+                                    leans on Redis for fast-moving game state. MongoDB and
+                                    DynamoDB cover document workloads; Pinecone, Qdrant and
+                                    ChromaDB handle retrieval-augmented generation for agentic
+                                    AI builds; Memcached rounds out the caching layer.</p>
                                     <ul class="skill-tags">
-                                        <li>PostgreSQL</li><li>MS SQL</li><li>Snowflake</li><li>MongoDB</li><li>DynamoDB</li><li>Pinecone</li><li>Qdrant</li><li>ChromaDB</li><li>Redis</li>
+                                        <li>PostgreSQL</li><li>PostGIS</li><li>MS SQL</li><li>Snowflake</li><li>MongoDB</li><li>DynamoDB</li><li>Pinecone</li><li>Qdrant</li><li>ChromaDB</li><li>Redis</li>
                                     </ul>
                                     <div class="skill-used">
                                         <span class="label-lead">Shipped in</span>
                                         <a href="{{ context.work_details }}?id=1">ChatExpense <i class="fa-solid fa-arrow-right"></i></a>
                                         <a href="{{ context.work_details }}?id=4">Hazard Reporting System <i class="fa-solid fa-arrow-right"></i></a>
+                                        <a href="{{ context.work_details }}?id=7">Wapptel <i class="fa-solid fa-arrow-right"></i></a>
+                                        <a href="{{ context.work_details }}?id=8">MarketWiki BD <i class="fa-solid fa-arrow-right"></i></a>
+                                        <a href="{{ context.work_details }}?id=9">High Command <i class="fa-solid fa-arrow-right"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -250,15 +284,23 @@
                                     chart building and smart query answering on top of
                                     OpenAI's voice, chat and image APIs — turning a raw receipt
                                     photo or voice note into a categorized transaction and a
-                                    personalized recommendation. PyTorch, scikit-learn, YOLO
-                                    and Sentence Transformers cover the classic ML side when a
-                                    trained model beats an LLM call.</p>
+                                    personalized recommendation. On
+                                    <a href="{{ context.work_details }}?id=8">MarketWiki BD</a>
+                                    the same tools parse disclosure documents and reason about
+                                    manipulation patterns across multiple LLM providers
+                                    (Anthropic, OpenAI, Gemini), and on
+                                    <a href="{{ context.work_details }}?id=7">Wapptel</a> they
+                                    power smarter auto-replies and campaign content. PyTorch,
+                                    scikit-learn, YOLO and Sentence Transformers cover the
+                                    classic ML side when a trained model beats an LLM call.</p>
                                     <ul class="skill-tags">
                                         <li>LangChain</li><li>LangGraph</li><li>AWS Bedrock</li><li>PyTorch</li><li>scikit-learn</li><li>YOLO</li>
                                     </ul>
                                     <div class="skill-used">
                                         <span class="label-lead">Shipped in</span>
                                         <a href="{{ context.work_details }}?id=1">ChatExpense <i class="fa-solid fa-arrow-right"></i></a>
+                                        <a href="{{ context.work_details }}?id=7">Wapptel <i class="fa-solid fa-arrow-right"></i></a>
+                                        <a href="{{ context.work_details }}?id=8">MarketWiki BD <i class="fa-solid fa-arrow-right"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -274,16 +316,24 @@
                                     powers the <a href="{{ context.work_details }}?id=4">Hazard Reporting System</a>'s
                                     volunteer-matching engine, which automatically pairs
                                     distressed callers with the nearest available volunteer
-                                    based on distance and availability. Celery also drives
-                                    scheduled campaign broadcasts on a WhatsApp automation
-                                    platform I built, and Socket.io covers real-time updates
-                                    when polling isn't fast enough.</p>
+                                    based on distance and availability. Celery and RabbitMQ
+                                    also run the document-ingestion pipeline behind
+                                    <a href="{{ context.work_details }}?id=8">MarketWiki BD</a>
+                                    and the turn-processing queue in
+                                    <a href="{{ context.work_details }}?id=9">High Command</a>,
+                                    and drive scheduled campaign broadcasts in
+                                    <a href="{{ context.work_details }}?id=7">Wapptel</a>, where
+                                    Socket.IO also streams live QR-scan and connection status
+                                    to the browser.</p>
                                     <ul class="skill-tags">
                                         <li>Celery</li><li>RabbitMQ</li><li>Socket.io</li>
                                     </ul>
                                     <div class="skill-used">
                                         <span class="label-lead">Shipped in</span>
                                         <a href="{{ context.work_details }}?id=4">Hazard Reporting System <i class="fa-solid fa-arrow-right"></i></a>
+                                        <a href="{{ context.work_details }}?id=7">Wapptel <i class="fa-solid fa-arrow-right"></i></a>
+                                        <a href="{{ context.work_details }}?id=8">MarketWiki BD <i class="fa-solid fa-arrow-right"></i></a>
+                                        <a href="{{ context.work_details }}?id=9">High Command <i class="fa-solid fa-arrow-right"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -301,17 +351,24 @@
                                     while scaling <a href="{{ context.work_details }}?id=3">Dingi Map APIs</a>
                                     on AWS ELB and Autoscaling to a few hundred requests per
                                     second for high-profile clients like Shohoz.com.
-                                    <a href="{{ context.work_details }}?id=1">ChatExpense</a>
-                                    runs on Railway with Stripe/Bkash payment integrations.
+                                    <a href="{{ context.work_details }}?id=1">ChatExpense</a>,
+                                    <a href="{{ context.work_details }}?id=7">Wapptel</a>,
+                                    <a href="{{ context.work_details }}?id=8">MarketWiki BD</a>
+                                    and <a href="{{ context.work_details }}?id=9">High Command</a>
+                                    are all Dockerized and deployed on Railway — my go-to when
+                                    a solo build needs to go from laptop to production fast.
                                     AWS (EC2, RDS, Lambda, S3, ECR, EKS) and Azure (Cosmos DB,
                                     Embedded Power BI) round out the cloud side.</p>
                                     <ul class="skill-tags">
-                                        <li>Docker</li><li>Kubernetes</li><li>GitLab CI</li><li>Gunicorn</li><li>uWSGI</li><li>Nginx</li><li>AWS</li><li>Azure</li>
+                                        <li>Docker</li><li>Kubernetes</li><li>GitLab CI</li><li>Gunicorn</li><li>uWSGI</li><li>Nginx</li><li>Railway</li><li>AWS</li><li>Azure</li>
                                     </ul>
                                     <div class="skill-used">
                                         <span class="label-lead">Shipped in</span>
                                         <a href="{{ context.work_details }}?id=3">Dingi Map APIs <i class="fa-solid fa-arrow-right"></i></a>
                                         <a href="{{ context.work_details }}?id=1">ChatExpense <i class="fa-solid fa-arrow-right"></i></a>
+                                        <a href="{{ context.work_details }}?id=7">Wapptel <i class="fa-solid fa-arrow-right"></i></a>
+                                        <a href="{{ context.work_details }}?id=8">MarketWiki BD <i class="fa-solid fa-arrow-right"></i></a>
+                                        <a href="{{ context.work_details }}?id=9">High Command <i class="fa-solid fa-arrow-right"></i></a>
                                     </div>
                                 </div>
                             </div>

@@ -54,6 +54,7 @@
                             <li{% if request.resolver_match.url_name == 'experience_template' %} class="active"{% endif %}><a href="{{ context.experience_url }}">Experience</a></li>
                             <li{% if request.resolver_match.url_name == 'education_template' %} class="active"{% endif %}><a href="{{ context.education_url }}">Education</a></li>
                             <li{% if request.resolver_match.url_name == 'skills_template' %} class="active"{% endif %}><a href="{{ context.skills_url }}">Skills</a></li>
+                            <li{% if request.resolver_match.url_name == 'services_template' %} class="active"{% endif %}><a href="{{ context.services_url }}">Services</a></li>
                             <li{% if request.resolver_match.url_name == 'projects_template' %} class="active"{% endif %}><a href="{{ context.projects_url }}">Projects</a></li>
                         </ul>
                     </div><!--/.nav-collapse -->
