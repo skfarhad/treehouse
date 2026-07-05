@@ -608,24 +608,107 @@ Ensuring high quality maintenance work should be the focus, data logging will be
         "id": 7,
         "title": """Wapptel""",
         "serial": 4,
-        "show": False,  # hidden until a thumbnail image is added (set image_url below)
+        "show": True,
         "category": "",
-        "image_url": None,
+        "image_url": """/static/website/assets/images/wapptel_service.png""",
         "image_path": "",
         "video_url": None,
-        "description": """Wapptel is a WhatsApp automation platform for marketing campaigns — enabling automated broadcast and interaction workflows for businesses.""",
+        "description": """Small and medium businesses want to run WhatsApp marketing campaigns without paying for the official WhatsApp Business API. Wapptel gives them bulk messaging, contact management and campaign tracking on top of WhatsApp Web — with the safety rails (rate limiting, phone validation) to avoid getting numbers banned.""",
         "side_para_top": "",
         "side_para_middle": "",
         "body_text": """
 <p>
-Wapptel is a WhatsApp automation platform built for marketing campaigns. It lets businesses run automated broadcasts and two-way interaction workflows to reach and engage their audience at scale.
+<a href="https://wapptel.com/">Wapptel</a>
+</p>
+<p>
+The official WhatsApp Business API is expensive and slow to get approved for a small business that just wants to send a bulk promotion to its customer list. Wapptel solves that by automating WhatsApp Web itself — connect an account by scanning a QR code, then manage contacts, run bulk-messaging campaigns and track delivery from a dashboard, without touching Meta's paid API.
+</p>
+<h3>How it works</h3>
+<ul>
+    <li>A three-tier design: a browser SPA talks to a Django backend, which talks to a separate Node.js microservice that holds the actual WhatsApp Web session.</li>
+    <li>Campaigns accept an Excel/CSV recipient list, validate Bangladeshi phone numbers, and send with rate limiting and progress tracking to keep accounts from being flagged as spam.</li>
+    <li>Multi-tenant from the start — organizations, users and subscriptions are first-class, not bolted on later.</li>
+</ul>
+<h3>Technology</h3>
+<p>
+Django REST Framework with JWT and API-key auth, PostgreSQL (+PostGIS), Celery and django-redis for background work, drf-spectacular for API docs, and Stripe for subscription billing. The WhatsApp connection itself is a Node.js/Express microservice built on <code>@whiskeysockets/baileys</code> (WhatsApp Web protocol), with Socket.IO for live QR/connection status and PM2 for process management. LangChain/LangGraph on top of OpenAI power smarter reply and campaign-content features.
 </p>
 <h3>My Contributions</h3>
 <ul>
-    <li>Designed and built the platform Back-End using Django, DRF and PostgreSQL.</li>
-    <li>Implemented WhatsApp automation and messaging workflows with Node.js and Baileys JS.</li>
-    <li>Built campaign scheduling and background processing with Celery.</li>
+    <li>Designed the three-tier architecture and built the Django backend end-to-end.</li>
+    <li>Built the Node.js/Baileys microservice for WhatsApp Web connection and messaging.</li>
+    <li>Implemented the bulk-campaign feature — recipient upload, phone validation, rate-limited sending and progress tracking.</li>
+    <li>Set up Celery-based background processing and Stripe subscription billing.</li>
 </ul>
+""",
+    },
+    {
+        "id": 8,
+        "title": """MarketWiki BD""",
+        "serial": 7,
+        "show": True,
+        "category": "",
+        "image_url": """/static/website/assets/images/marketwiki_bd.png""",
+        "image_path": "",
+        "video_url": None,
+        "description": """Retail investors in Bangladesh's DSE/CSE market have no easy way to spot pump-and-dump schemes or gauge how trustworthy an issuer is before investing. MarketWiki BD is a market-intelligence platform I'm building to score issuer credibility and flag manipulation patterns automatically.""",
+        "side_para_top": "",
+        "side_para_middle": "",
+        "body_text": """
+<p>
+<a href="https://marketwikibd.com/">MarketWiki BD</a>
+</p>
+<p>
+Bangladesh's stock market (DSE/CSE) has a long history of syndicate-driven pump-and-dump schemes and opaque issuer practices, and retail investors have no accessible tool to see the warning signs before they're already holding the bag. MarketWiki BD is my answer to that gap — a surveillance and scoring platform that turns public market data and filings into an early-warning signal.
+</p>
+<h3>What it does</h3>
+<ul>
+    <li>Computes an Issuer Trust/Authenticity Score from market and disclosure data.</li>
+    <li>Classifies manipulation phases and fingerprints syndicate trading patterns.</li>
+    <li>Flags influencer-driven pump activity and tracks political/regulatory risk signals.</li>
+</ul>
+<h3>Technology</h3>
+<p>
+Django REST Framework backend with JWT/API-key auth and drf-spectacular for the API layer; Channels/Daphne and Celery/RabbitMQ for real-time and background processing; PostgreSQL today, with TimescaleDB, Neo4j and a vector store planned for time-series and relationship analysis. Market data comes in through my own <a href="/website/work-details/?id=5">stocksurferbd</a> library, with pandas for analysis and LangChain (Anthropic/OpenAI/Gemini) for document parsing and pattern reasoning. Stripe handles billing; the whole stack is Dockerized and deployed on Railway.
+</p>
+<p>
+<b>Status:</b> pre-MVP — the product design and core infrastructure (auth, billing, data ingestion scaffolding) are in place; the manipulation-detection models are what I'm building next.
+</p>
+""",
+    },
+    {
+        "id": 9,
+        "title": """High Command""",
+        "serial": 8,
+        "show": True,
+        "category": "",
+        "image_url": """/static/website/assets/images/highcommand_game.png""",
+        "image_path": "",
+        "video_url": None,
+        "description": """Turn-based strategy games running game logic separately on the server and in the browser risk the two falling out of sync — letting a client desync into an unfair or exploitable state. High Command is a deterministic, real-time strategic wargame where the same core rules engine runs, verifiably identically, on both sides.""",
+        "side_para_top": "",
+        "side_para_middle": "",
+        "body_text": """
+<p>
+<a href="https://highcommand.live/">High Command</a>
+</p>
+<p>
+High Command is a two-player, turn-based strategic wargame — missiles, drones and jammers versus interceptors, fighters, radar and civil defence, played out over budgeted 5-turn phases. The interesting engineering problem isn't the game itself, it's keeping the rules engine trustworthy: if the server and the browser ever compute a different outcome for the same move, the game is exploitable.
+</p>
+<h3>How it's built</h3>
+<ul>
+    <li>A single Python "core" module holds all deterministic game logic — no duplicated rules on the client.</li>
+    <li>That core is compiled to JavaScript with Transcrypt so the browser runs the exact same logic, not a reimplementation.</li>
+    <li>A parity test suite runs the same game states through both the Python and compiled-JS versions and diffs the results, catching any behavioral drift.</li>
+    <li>Django Channels over WebSockets drives real-time turn exchange between players; Celery/RabbitMQ handle asynchronous processing.</li>
+</ul>
+<h3>Technology</h3>
+<p>
+Django + DRF + Channels/Daphne on the backend, PostgreSQL and Redis for state and queuing, Celery/RabbitMQ for background work. The frontend is a pixi.js 8 canvas renderer built with esbuild. Dockerized, deployed on Railway.
+</p>
+<p>
+<b>Status:</b> in active development — the deterministic core, Python/JS parity testing and real-time turn infrastructure are built; game content and matchmaking are in progress.
+</p>
 """,
     },
 ]
