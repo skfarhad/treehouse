@@ -795,6 +795,24 @@ footer.entry-meta .meta-in {
   display: inline-block;
   margin: 0 10px;
 }
+/* Services — simple "Read more" text link + even card rows
+/////////////////////////////////////////////////////////////////////*/
+.read-more {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+.read-more:hover {
+  text-decoration: none;
+}
+@media (min-width: 768px) {
+  #services > .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
 /* Max page width
 /////////////////////////////////////////////////////////////////////*/
 @media (min-width: 1200px) {

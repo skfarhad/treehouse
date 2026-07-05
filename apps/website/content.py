@@ -61,7 +61,7 @@ SHORT_BIO = """I'm a Software Engineering Lead, currently working at <a href="ht
 SERVICES = [
     {
         "id": 5,
-        "title": """Technical Leadership & Engineering Management""",
+        "title": """Technical Leadership""",
         "serial": 0,
         "show": True,
         "image_url": None,
@@ -121,7 +121,7 @@ I cover the full stack: backend and APIs, AI/LLM features, database design, and 
     },
     {
         "id": 4,
-        "title": """Next-Gen Business Growth""",
+        "title": """Business Growth""",
         "serial": 5,
         "show": True,
         "image_url": None,
@@ -164,7 +164,7 @@ I cover the full stack: backend and APIs, AI/LLM features, database design, and 
     },
     {
         "id": 1,
-        "title": """Backend & API Engineering""",
+        "title": """Backend Engineering""",
         "serial": 3,
         "show": True,
         "image_url": None,
