@@ -60,9 +60,69 @@ SHORT_BIO = """I'm a Software Engineering Lead, currently working at <a href="ht
 
 SERVICES = [
     {
+        "id": 5,
+        "title": """Technical Leadership & Engineering Management""",
+        "serial": 0,
+        "show": True,
+        "image_url": None,
+        "image_path": "",
+        "video_url": None,
+        "description": """I lead engineering and AI teams from idea to production — owning architecture, code quality, delivery and mentoring. Open to Technical Lead and Engineering Manager roles where solid backend engineering meets applied AI.""",
+        "side_para_top": "",
+        "side_para_middle": "",
+        "side_para_bottom": "",
+        "body_text": """
+<p>
+I'm a hands-on engineering leader. Across Techjays, IQVIA, ACI and Dingi I've led teams of Python, AI and full-stack engineers — coordinating delivery, setting technical direction, and helping people do their best work.
+</p>
+<h3>What I bring to a team</h3>
+<ul>
+    <li>Technical direction and architecture for backend and AI/LLM systems</li>
+    <li>Delivery leadership — turning roadmaps into shipped, reliable software</li>
+    <li>Code quality, reviews and engineering practices (testing, CI/CD)</li>
+    <li>Mentoring engineers and coordinating cross-functional teams</li>
+    <li>Bridging product and engineering so effort lands where it creates value</li>
+</ul>
+<p>
+Recent examples: leading a team of AI engineers building LLM-driven solutions at Techjays, coordinating a Python/AI team on GenAI products at IQVIA, and guiding AI teams at ACI. The <a href="/website/projects/">Projects</a> section shows the kind of work my teams and I ship.
+</p>
+<p>
+<b>I'm currently open to Technical Lead and Engineering Manager roles.</b>
+</p>
+""",
+    },
+    {
+        "id": 6,
+        "title": """Rapid MVP Development""",
+        "serial": 2,
+        "show": True,
+        "image_url": None,
+        "image_path": "",
+        "video_url": None,
+        "description": """Have an idea that needs to become a real product fast? As a solo builder I take ideas from zero to a deployed, full-stack MVP — backend, AI and cloud — the way I built ChatExpense and ScanFixNow.""",
+        "side_para_top": "",
+        "side_para_middle": "",
+        "side_para_bottom": "",
+        "body_text": """
+<p>
+Sometimes you don't need a whole team — you need one experienced builder who can take an idea from zero to a working, deployed product. That's something I genuinely enjoy and have done repeatedly on my own.
+</p>
+<h3>Products I've built solo</h3>
+<ul>
+    <li><b>ChatExpense</b> — an AI-powered expense tracker (Django, DRF, PostgreSQL, OpenAI, LangGraph); grew to 1300+ registered users with a Google Play app.</li>
+    <li><b>ScanFixNow</b> — QR-code-based maintenance incident logging for appliances and installations.</li>
+    <li><b>stocksurferbd</b> — a published Python library for Dhaka & Chittagong stock-exchange data.</li>
+    <li><b>Wapptel</b> — a WhatsApp marketing-automation platform.</li>
+</ul>
+<p>
+I cover the full stack: backend and APIs, AI/LLM features, database design, and cloud deployment (Docker, AWS, Railway). If you have an MVP to validate quickly, I can help you get it in front of real users. See the <a href="/website/projects/">Projects</a> section for more.
+</p>
+""",
+    },
+    {
         "id": 4,
         "title": """Next-Gen Business Growth""",
-        "serial": 0,
+        "serial": 5,
         "show": True,
         "image_url": None,
         "image_path": "",
@@ -104,8 +164,8 @@ SERVICES = [
     },
     {
         "id": 1,
-        "title": """Web App/API Development""",
-        "serial": 1,
+        "title": """Backend & API Engineering""",
+        "serial": 3,
         "show": True,
         "image_url": None,
         "image_path": "",
@@ -157,8 +217,8 @@ I can help you achieve full abstraction for the backend APIs so that you can foc
     },
     {
         "id": 3,
-        "title": """Agentic AI solutions""",
-        "serial": 2,
+        "title": """AI & LLM Engineering""",
+        "serial": 1,
         "show": True,
         "image_url": None,
         "image_path": "",

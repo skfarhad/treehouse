@@ -36,7 +36,7 @@
             <div id="services" class="row section featured topspace">
                 <h2 class="section-title"><span>Services</span></h2>
                 <div class="row">
-                    {% for service in context.services %}
+                    {% for service in context.services|slice:":3" %}
 
                     <div class="col-sm-6 col-md-4">
                         <h3 class="text-center">{{ service.title }}</h3>
@@ -49,6 +49,9 @@
 
                     {% endfor %}
                 </div>
+                <p class="text-center">
+                    <a href="{{ context.services_url }}" class="btn btn-action">View all services</a>
+                </p>
             </div> <!-- / section -->
 
             <div id="recent-works" class="row section recentworks topspace">

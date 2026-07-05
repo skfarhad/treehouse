@@ -9,6 +9,7 @@ def get_nav_urls(request):
         'education_url': get_url(request, '/website/', 'education/'),
         'skills_url': get_url(request, '/website/', 'skills/'),
         'projects_url': get_url(request, '/website/', 'projects/'),
+        'services_url': get_url(request, '/website/', 'services/'),
         'service_details': get_url(request, '/website/', 'service-details/'),
         'work_details': get_url(request, '/website/', 'work-details/'),
     }
