@@ -6,6 +6,7 @@ def get_nav_urls(request):
     return {
         'home': get_url(request, '/website/', 'home/'),
         'about': get_url(request, '/website/', 'about/'),
+        'services_url': get_url(request, '/website/', 'services/'),
         'service_details': get_url(request, '/website/', 'service-details/'),
         'work_details': get_url(request, '/website/', 'work-details/'),
     }
