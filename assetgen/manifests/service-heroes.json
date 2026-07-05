@@ -1,0 +1,47 @@
+{
+  "_comment": "Hero banner illustrations for the /website/service-details/ pages on the personal portfolio site. Uses Recraft V3's dedicated 'digital_illustration' style for reliable flat-vector output (flux-dev kept drifting into glossy 3D renders and hallucinated garbled text on signage). Palette matches the site's brand pink (#bd1550) plus dark navy/charcoal and white. Run: poetry run python assetgen/generate.py assetgen/manifests/service-heroes.json",
+  "defaults": {
+    "model": "recraft-ai/recraft-v3",
+    "input": {
+      "style": "digital_illustration",
+      "size": "1820x1024",
+      "negative_prompt": "text, words, letters, numbers, typography, labels, captions, infographic, poster, dashboard, UI mockup, multiple panels"
+    },
+    "resize": [1440, 810],
+    "background_removal_model": null,
+    "prompt_prefix": "A single unified flat vector icon illustration (not an infographic, not a poster, not a UI dashboard, no separate colored panels), wide banner composition, clean modern tech/business style, bold simple shapes, generous white negative space, color palette of magenta-pink, dark navy and light grey accents on a white background",
+    "prompt_suffix": "no text, no letters, no numbers, no logos, no signage, no captions, no human faces or figures, crisp clean vector look"
+  },
+  "assets": [
+    {
+      "name": "service-5-technical-leadership",
+      "out": "apps/website/static/website/assets/images/services/technical-leadership.png",
+      "prompt": "a pyramid-shaped constellation of glowing interconnected orbs, one large orb at the apex glowing bright pink, thin connecting lines between the orbs, abstract and minimal"
+    },
+    {
+      "name": "service-6-rapid-mvp",
+      "out": "apps/website/static/website/assets/images/services/rapid-mvp.png",
+      "prompt": "a stylized rocket ship launching upward off an open laptop, small speed lines and a dotted arc trajectory, conveying a fast product launch"
+    },
+    {
+      "name": "service-4-business-growth",
+      "out": "apps/website/static/website/assets/images/services/business-growth.png",
+      "prompt": "a single bold upward arrow made of ascending geometric steps/blocks, rising toward a glowing pink five-point star, minimal and abstract, conveying growth"
+    },
+    {
+      "name": "service-1-backend-engineering",
+      "out": "apps/website/static/website/assets/images/services/backend-engineering.png",
+      "prompt": "a stack of server racks beside a large gear/cog containing a code bracket symbol, geometric and orderly, conveying backend APIs and infrastructure"
+    },
+    {
+      "name": "service-3-ai-llm-engineering",
+      "out": "apps/website/static/website/assets/images/services/ai-llm-engineering.png",
+      "prompt": "a single brain-shaped icon made of glowing interconnected circuit nodes, with one small speech-bubble shape emerging from the top, unified flat icon design"
+    },
+    {
+      "name": "service-7-engineering-mentorship",
+      "out": "apps/website/static/website/assets/images/services/engineering-mentorship.png",
+      "prompt": "two overlapping speech-bubble shapes stacked together with a small lightbulb shape inside one of them, single unified flat icon, conveying mentorship and guidance"
+    }
+  ]
+}

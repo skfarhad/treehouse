@@ -8,8 +8,13 @@ See ``.claude/skills/site-content/SKILL.md`` for guidance.
 Fields mirror the old models so templates need no changes:
   service: id, title, serial, show, image_url, image_path, video_url,
            description, side_para_top, side_para_middle, side_para_bottom,
-           body_text
+           body_text, icon, hero_image
   work:    same, plus ``category``; no ``side_para_bottom``
+
+- ``icon`` is a Font Awesome 6 class (e.g. ``"fa-solid fa-rocket"``), shown as
+  a badge on the services list and detail page.
+- ``hero_image`` is a static-relative path (for ``{% static %}``) to a banner
+  image shown at the top of the service detail page; leave "" to skip it.
 
 - Set ``show=False`` to hide an entry without deleting it.
 - ``serial`` controls sort order (ascending).
@@ -64,8 +69,10 @@ SERVICES = [
         "title": """Technical Leadership""",
         "serial": 0,
         "show": True,
+        "icon": "fa-solid fa-users-gear",
         "image_url": None,
         "image_path": "",
+        "hero_image": "website/assets/images/services/technical-leadership.webp",
         "video_url": None,
         "description": """I lead engineering and AI teams from idea to production — owning architecture, code quality, delivery and mentoring. Open to Technical Lead and Engineering Manager roles where solid backend engineering meets applied AI.""",
         "side_para_top": "",
@@ -96,8 +103,10 @@ Recent examples: leading a team of AI engineers building LLM-driven solutions at
         "title": """Rapid MVP Development""",
         "serial": 2,
         "show": True,
+        "icon": "fa-solid fa-rocket",
         "image_url": None,
         "image_path": "",
+        "hero_image": "website/assets/images/services/rapid-mvp.webp",
         "video_url": None,
         "description": """Have an idea that needs to become a real product fast? As a solo builder I take ideas from zero to a deployed, full-stack MVP — backend, AI and cloud — the way I built ChatExpense and ScanFixNow.""",
         "side_para_top": "",
@@ -124,8 +133,10 @@ I cover the full stack: backend and APIs, AI/LLM features, database design, and 
         "title": """Business Growth""",
         "serial": 5,
         "show": True,
+        "icon": "fa-solid fa-chart-line",
         "image_url": None,
         "image_path": "",
+        "hero_image": "website/assets/images/services/business-growth.webp",
         "video_url": None,
         "description": """Modern SEO, AI-driven marketing, optimized sales funnels, and smart lead generation are key to growing your digital business. With analytics and automation, you can boost visibility, attract quality leads, and scale faster in today’s competitive market.""",
         "side_para_top": "",
@@ -167,8 +178,10 @@ I cover the full stack: backend and APIs, AI/LLM features, database design, and 
         "title": """Backend Engineering""",
         "serial": 3,
         "show": True,
+        "icon": "fa-solid fa-server",
         "image_url": None,
         "image_path": "",
+        "hero_image": "website/assets/images/services/backend-engineering.webp",
         "video_url": None,
         "description": """Got an innovative idea for profitable business? Great! Or, have an MPV(Minimum Viable Product) perhaps to show for? Even better!! Now you need present it to the potential clients. That's where I can help you!""",
         "side_para_top": "",
@@ -220,8 +233,10 @@ I can help you achieve full abstraction for the backend APIs so that you can foc
         "title": """AI & LLM Engineering""",
         "serial": 1,
         "show": True,
+        "icon": "fa-solid fa-robot",
         "image_url": None,
         "image_path": "",
+        "hero_image": "website/assets/images/services/ai-llm-engineering.webp",
         "video_url": None,
         "description": """Agentic AI empowers systems to act autonomously, pursue goals, and make context-aware decisions. AI agents are essential for next-generation automation and intelligent business solutions. If you need agentic AI system for your business, let’s discuss how I can help turn your vision into reality.""",
         "side_para_top": "",
@@ -249,12 +264,45 @@ I can help you achieve full abstraction for the backend APIs so that you can foc
 """,
     },
     {
+        "id": 7,
+        "title": """Engineering Mentorship""",
+        "serial": 4,
+        "show": True,
+        "icon": "fa-solid fa-chalkboard-user",
+        "image_url": None,
+        "image_path": "",
+        "hero_image": "website/assets/images/services/engineering-mentorship.webp",
+        "video_url": None,
+        "description": """Paid 1:1 mentorship for junior and mid-level engineers. In the AI-tooling era it's easy to ship code you don't fully understand — I help you build the underlying judgment (debugging, architecture, code review instincts) that AI assistants can't hand you.""",
+        "side_para_top": "",
+        "side_para_middle": "",
+        "side_para_bottom": "",
+        "body_text": """
+<p>
+AI coding assistants are great at producing working code fast — and that's exactly the problem for engineers early in their career. It's never been easier to ship something that works while quietly skipping the struggle that used to build real understanding: why a bug happened, why one architecture beats another, what a senior engineer actually looks for in a code review. That gap doesn't show up right away. It shows up later, when you're the one on call and the AI-generated fix isn't obvious anymore.
+</p>
+<h3>What mentorship looks like</h3>
+<ul>
+    <li>Regular paid 1:1 sessions, tailored to where you are — new grad, self-taught, or a few years in and plateauing.</li>
+    <li>Code review with reasoning, not just corrections — I explain the "why" behind every suggestion.</li>
+    <li>Real debugging and architecture practice on your own code or realistic problems, not toy exercises.</li>
+    <li>Honest feedback on how to use AI tools as leverage without losing the underlying skill.</li>
+    <li>Career guidance: what to focus on next, how to read a job description, how to talk about your work in interviews.</li>
+</ul>
+<p>
+This comes from the same place as the mentoring I already do inside teams at Techjays, IQVIA, ACI and Dingi — the difference here is it's structured, paid, and entirely about your growth. If you're a junior or mid-level engineer who wants a deliberate way to build judgment instead of just shipping faster, get in touch and we'll set up a plan.
+</p>
+""",
+    },
+    {
         "id": 2,
         "title": """Automated Trading""",
         "serial": 3,
         "show": False,
+        "icon": "fa-solid fa-money-bill-trend-up",
         "image_url": None,
         "image_path": "",
+        "hero_image": "",
         "video_url": None,
         "description": """If you are familiar with the world of online trading, then the need of automated trading system is not news to you! Automate the tedious stuff to well curated scripts and focus more on gathering insights  that enhances your trading portfolio.""",
         "side_para_top": "",

@@ -67,6 +67,13 @@ class ServiceDetailsPage(DetailsPage):
     def get_object(self, obj_id):
         return content.get_service(obj_id)
 
+    def get_context(self, request):
+        context = super().get_context(request)
+        context.update({
+            'services': attach_urls(content.get_services(), context['service_details']),
+        })
+        return context
+
 
 class ProjectsPage(ContextPage):
     template_path = 'website/projects.html'

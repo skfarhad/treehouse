@@ -1,39 +1,161 @@
 {% extends 'website/base.html' %}
+{% load static %}
 
 {% block title %}
-    <title>Home</title>
+    <title>{{ context.service_details.title }}</title>
 {% endblock title %}
 
 {% block content %}
     <main id="main">
         <div class="container">
-            <div class="row topspace">
+            <style>
+                #service-detail .service-detail-header {
+                    display: flex;
+                    align-items: center;
+                    gap: 16px;
+                    margin-bottom: 20px;
+                }
+                #service-detail .service-detail-icon {
+                    flex: 0 0 56px;
+                    width: 56px;
+                    height: 56px;
+                    border-radius: 50%;
+                    background: #fdeaf0;
+                    color: #bd1550;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 24px;
+                }
+                #service-detail .service-detail-header .page-title {
+                    margin: 0;
+                }
+                #service-detail .service-hero {
+                    width: 100%;
+                    border-radius: 6px;
+                    margin-bottom: 24px;
+                    border: 1px solid #ececec;
+                }
+                #service-detail .cta-widget {
+                    text-align: center;
+                    padding: 20px;
+                    border: 1px solid #ececec;
+                    border-radius: 6px;
+                }
+                #service-detail .cta-widget .service-icon {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 56px;
+                    height: 56px;
+                    margin: 0 auto 12px;
+                    border-radius: 50%;
+                    background: #fdeaf0;
+                    color: #bd1550;
+                    font-size: 22px;
+                }
+                #service-detail .cta-widget .btn-action {
+                    margin-top: 10px;
+                }
+                #service-detail .other-services {
+                    list-style: none;
+                    margin: 0;
+                    padding: 0;
+                }
+                #service-detail .other-services li {
+                    border-bottom: 1px solid #ececec;
+                }
+                #service-detail .other-services li:last-child {
+                    border-bottom: none;
+                }
+                #service-detail .other-services a {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    padding: 10px 2px;
+                    color: #454545;
+                    text-decoration: none;
+                }
+                #service-detail .other-services a:hover {
+                    color: #bd1550;
+                }
+                #service-detail .other-services .service-icon {
+                    flex: 0 0 32px;
+                    width: 32px;
+                    height: 32px;
+                    border-radius: 50%;
+                    background: #fdeaf0;
+                    color: #bd1550;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 13px;
+                }
+            </style>
+            <div id="service-detail" class="row topspace">
                 <!-- Sidebar -->
                 <aside class="col-md-4 sidebar sidebar-left">
+                    <div class="row widget">
+                        <div class="col-xs-12">
+                            <div class="cta-widget">
+                                <span class="service-icon"><i class="fa-solid fa-paper-plane"></i></span>
+                                <h4>Let's talk</h4>
+                                <p>Interested in this service? Reach out and let's discuss your project.</p>
+                                <a href="mailto:farhad@techjays.com" class="btn btn-action">Get in touch</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% if context.service_details.side_para_top %}
                     <div class="row widget">
                         <div class="col-xs-12">
                             {{ context.service_details.side_para_top|safe }}
                         </div>
                     </div>
+                    {% endif %}
+                    {% if context.service_details.side_para_middle %}
                     <div class="row widget">
                         <div class="col-xs-12">
                             {{ context.service_details.side_para_middle|safe }}
                         </div>
                     </div>
+                    {% endif %}
+                    {% if context.service_details.side_para_bottom %}
                     <div class="row widget">
                         <div class="col-xs-12">
                             {{ context.service_details.side_para_bottom|safe }}
+                        </div>
+                    </div>
+                    {% endif %}
+                    <div class="row widget">
+                        <div class="col-xs-12">
+                            <h3 class="widget-title">Other services</h3>
+                            <ul class="other-services">
+                                {% for service in context.services %}
+                                {% if service.id != context.service_details.id %}
+                                <li>
+                                    <a href="{{ service.url }}">
+                                        <span class="service-icon"><i class="{{ service.icon }}"></i></span>
+                                        {{ service.title }}
+                                    </a>
+                                </li>
+                                {% endif %}
+                                {% endfor %}
+                            </ul>
                         </div>
                     </div>
                 </aside>
                 <!-- /Sidebar -->
                 <!-- Article main content -->
                 <article class="col-sm-8 maincontent">
-                    <header class="page-header">
+                    <header class="page-header service-detail-header">
+                        <span class="service-detail-icon"><i class="{{ context.service_details.icon }}"></i></span>
                         <h1 class="page-title">
                             {{ context.service_details.title }}
                         </h1>
                     </header>
+                    {% if context.service_details.hero_image %}
+                    <img class="service-hero" src="{% static context.service_details.hero_image %}" alt="{{ context.service_details.title }}">
+                    {% endif %}
                     <div>{{ context.service_details.body_text|safe }}</div>
                 </article>
                 <!-- /Article -->
