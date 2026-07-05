@@ -5,9 +5,7 @@ set -e
 
 echo "✅ Booting app now..."
 
-# Run database migrations
-echo "🔄 Running migrations..."
-python manage.py migrate
+# No database — this is a static personal site (content in apps/website/content.py).
 
 # ✅ Make sure Django knows where to find settings
 export DJANGO_SETTINGS_MODULE=conf.settings

@@ -19,6 +19,13 @@ venv/
 
 staticfiles/*
 
+# Claude Code personal (machine-local) settings
+.claude/settings.local.json
+
+# SQLite databases — the site is DB-less; content lives in apps/website/content.py.
+# backend.db is kept locally only as a source-of-truth backup of the old data.
+*.db
+
 *.py[cod]
 *$py.class
 
