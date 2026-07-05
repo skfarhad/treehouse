@@ -788,8 +788,8 @@ footer.entry-meta .meta-in {
   font-size: 30px;
 }
 .follow-me-icons i {
-  float: left;
-  margin: 0 10px 0 0;
+  display: inline-block;
+  margin: 0 10px;
 }
 /* Max page width
 /////////////////////////////////////////////////////////////////////*/
