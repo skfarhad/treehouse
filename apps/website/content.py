@@ -1,9 +1,10 @@
 """Static site content for the personal website.
 
 This replaces the former database-backed models (``Paragraph`` / ``Service`` /
-``WorkHistory``). Edit this file to change the bio, services, or recent works.
-There is no admin panel and no database for site content.
-See ``.claude/skills/site-content/SKILL.md`` for guidance.
+``WorkHistory``). Edit this file to change the bio, services, recent works,
+job history, education or publications. There is no admin panel and no
+database for site content. See ``.claude/skills/site-content/SKILL.md`` for
+guidance.
 
 Fields mirror the old models so templates need no changes:
   service: id, title, serial, show, image_url, image_path, video_url,
@@ -20,6 +21,16 @@ Fields mirror the old models so templates need no changes:
 - ``serial`` controls sort order (ascending).
 - ``description`` is plain text (shown on the home page cards).
 - ``body_text`` / ``side_para_*`` are raw HTML (rendered with ``|safe``).
+
+The Experience/Education/Publications timeline (see ``.claude/skills`` and
+the ``timeline-*`` CSS classes in ``styles.css``) uses its own shapes:
+  experience:   id, serial, show, company, company_url, role, location,
+                date_start, date_end, description (HTML), media (list of
+                {image, alt, caption} — image is a static-relative path)
+  education:    id, serial, show, institution, institution_url, degree,
+                location, date_start, date_end, description (HTML), media
+  publications: id, serial, show, title, date, publisher, description
+                (plain text), url
 """
 
 
@@ -57,6 +68,21 @@ def get_service(obj_id):
 
 def get_work(obj_id):
     return _by_id(WORKS, obj_id)
+
+
+def get_experience():
+    """Job history, most recent first."""
+    return _visible(EXPERIENCE)
+
+
+def get_education():
+    """Schools attended, most recent first."""
+    return _visible(EDUCATION)
+
+
+def get_publications():
+    """Published research articles."""
+    return _visible(PUBLICATIONS)
 
 
 
@@ -758,5 +784,222 @@ Django + DRF + Channels/Daphne on the backend, PostgreSQL and Redis for state an
 <b>Status:</b> in active development — the deterministic core, Python/JS parity testing and real-time turn infrastructure are built; game content and matchmaking are in progress.
 </p>
 """,
+    },
+]
+
+
+EXPERIENCE = [
+    {
+        "id": 1,
+        "serial": 0,
+        "show": True,
+        "company": "Techjays",
+        "company_url": "https://www.techjays.com/",
+        "role": "Software Engineering Lead",
+        "location": "Dhaka",
+        "date_start": "August 2025",
+        "date_end": "Present",
+        "description": """
+<p>
+Leading a team of AI engineers designing and deploying LLM-driven solutions for client projects. Built an LLM-based content fidelity classification system using Python, Django, AWS Bedrock, Docker, Kubernetes and GitLab CI for a leading US-based e-commerce aggregator handling 10K+ SKUs — reducing human intervention for content fidelity management by 50%.
+</p>
+""",
+        "media": [
+            {
+                "image": "website/assets/images/techjays_srilanka_tour.jpg",
+                "alt": "The Techjays team during the AI Summit 2026 in Sri Lanka",
+                "caption": "With the Techjays team during our Sri Lanka tour for the AI Summit 2026!",
+            },
+        ],
+    },
+    {
+        "id": 2,
+        "serial": 1,
+        "show": True,
+        "company": "IQVIA",
+        "company_url": "https://www.iqvia.com/",
+        "role": "Lead Software Engineer",
+        "location": "Dhaka",
+        "date_start": "May 2023",
+        "date_end": "August 2025",
+        "description": """
+<p>
+Led Back-End development on IQVIA's Orchestrated Analytics and GenAI products, coordinating a team of Python/AI developers to build an AI-based Chat Assistant and improve system performance and code quality. Led the integration of the OA Analytics platform with a client's MS Teams app using Python, FastAPI and the MS Graph API, improving notification delivery performance by 50%. Also architected a centralized, event-driven task scheduler with Celery Beat and FastAPI that reduced task duplication by 90%.
+</p>
+""",
+        "media": [
+            {
+                "image": "website/assets/images/iqvia_cricket_w1.jpg",
+                "alt": "",
+                "caption": "A happy moment after winning a match with IQVIA teammates!",
+            },
+        ],
+    },
+    {
+        "id": 3,
+        "serial": 2,
+        "show": True,
+        "company": "ACI Limited",
+        "company_url": "https://www.aci-bd.com/",
+        "role": "AI/Machine Learning Architect",
+        "location": "Dhaka",
+        "date_start": "September 2020",
+        "date_end": "May 2023",
+        "description": """
+<p>
+Implemented the Predictive Analysis for Chemist shops for Pharma business of ACI. It's a forecast generation process to enable the Pharma field force to plan better with the help of purchase predictions buying patterns provided by AI algorithms.
+</p>
+<p>
+Also implemented an AI-driven chatbot for the consumer brand customers with an engaging experience and precise information to guide them to the proper channel. It also helps ACI consumer brands to never miss any business opportunities due to unavoidable service outage from human agents.
+</p>
+<p>
+Guided a team of AI professionals to solve the complex problems of ACI businesses. Also worked with ACI business professionals from different fields to help them adapt to data-driven technologies to improve KPI.
+</p>
+<p>
+Worked with user behavior data from Bangladesh's one of the biggest retail chains — <a href="https://www.shwapno.com/">Shwapno</a>, owned by ACI. Coordinated a small team of AI developers and analysts to perform customer segmentation, churn analysis, basket analysis and purchase prediction.
+</p>
+""",
+        "media": [
+            {
+                "image": "website/assets/images/aci_with_team.jpg",
+                "alt": "",
+                "caption": "With my Python/ML team members!",
+            },
+            {
+                "image": "website/assets/images/aci_office_farewell.jpg",
+                "alt": "",
+                "caption": "My farewell party at ACI!",
+            },
+        ],
+    },
+    {
+        "id": 4,
+        "serial": 3,
+        "show": True,
+        "company": "Dingi Technologies Ltd.",
+        "company_url": "http://www.dingi.tech/",
+        "role": "Lead, IoT & Enterprise",
+        "location": "Dhaka",
+        "date_start": "September 2017",
+        "date_end": "September 2020",
+        "description": """
+<p>
+Implemented the Back-End APIs & server automation of the <a href="http://www.dingi.tech/teamwork.php">Teamwork platform</a> — a field-force tracking and task management solution including web and mobile platforms. Provided APIs for GPS tracking, attendance management, reporting, task management, reminders, chatting, file sharing, access control and assignment management. Coordinated a team of mobile app developers, UX designers and front-end developers.
+</p>
+<p>
+Built the Dingi Vehicle tracking system from the ground up and helped onboard its first enterprise clients — implementing an IoT server back-end using Django, Node.js and Socket.io to handle 50k+ GPS/OBD devices for clients like GrameenPhone.
+</p>
+<p>
+Improved the performance of the <a href="http://www.dingi.tech/api.php">Dingi Map API</a> service by 150% and reduced AWS cost by 50% by optimizing Python multiprocessing, Django, AWS elastic load balancers and autoscaling. It's used by ride-sharing companies and vehicle-tracking providers in Bangladesh.
+</p>
+<p>
+Improved data-pipeline efficiency for the <a href="http://www.dingi.tech/dingi_life.php">Dingi Life app</a> by 50% and data accuracy by 80% using PostgreSQL, Elasticsearch and Python.
+</p>
+""",
+        "media": [
+            {
+                "image": "website/assets/images/cover_photo.jpeg",
+                "alt": "",
+                "caption": "Working with great intensity there!",
+            },
+        ],
+    },
+    {
+        "id": 5,
+        "serial": 4,
+        "show": True,
+        "company": "Codemen Solutions",
+        "company_url": "http://codemen.com/",
+        "role": "Software Engineer",
+        "location": "Dhaka",
+        "date_start": "April 2016",
+        "date_end": "August 2017",
+        "description": """
+<p>
+Implemented an intelligent video surveillance system using C# and Emgu CV for people-movement detection and tracking, achieving detection accuracy up to 70%.
+</p>
+<p>
+Also built a PDF-to-image service for document management using C# and ImageMagick, improving document-processing efficiency by 50%.
+</p>
+""",
+        "media": [],
+    },
+]
+
+
+EDUCATION = [
+    {
+        "id": 1,
+        "serial": 0,
+        "show": True,
+        "institution": "Bangladesh University of Engineering & Technology (BUET)",
+        "institution_url": "",
+        "degree": "BSc in Electrical & Electronic Engineering",
+        "location": "Dhaka",
+        "date_start": "February 2011",
+        "date_end": "March 2016",
+        "description": """
+<p>
+Did my undergrad from BUET. Concentrating on Electrical & Electronic Engineering. Had a lot of fun while doing my undergrad. Had the opportunity to meet some outstanding people there. My major was communication and minor was electronics. My undergraduate thesis was on Photonic Crystal Fibers, which led to three published IEEE research articles (see Publications below). Not totally happy with my CGPA though! Could've done so much better. That's because I was pursuing so many things at the same time like developing programming and software development skills which was outside of my curriculum. People are not good at multi-tasking. Lesson learned indeed!
+</p>
+""",
+        "media": [
+            {
+                "image": "website/assets/images/cover_photo_convo.jpg",
+                "alt": "",
+                "caption": "A nice photo challenge for you. See if you can find me in this picture!",
+            },
+        ],
+    },
+    {
+        "id": 2,
+        "serial": 1,
+        "show": True,
+        "institution": "Rifles Public School & College",
+        "institution_url": "",
+        "degree": "HSC in Science",
+        "location": "Dhaka",
+        "date_start": "August 2008",
+        "date_end": "July 2010",
+        "description": """
+<p>
+Studied my HSC here. That was a short period of 2 years that just went by in a flash! Met some friends though. And some generous teachers. My uncle was a lecturer back then that was really helpful.
+</p>
+""",
+        "media": [],
+    },
+]
+
+
+PUBLICATIONS = [
+    {
+        "id": 1,
+        "serial": 0,
+        "show": True,
+        "title": "Ultra-high nonlinear photonic crystal fiber with GeO2 doped core",
+        "date": "Feb 16, 2017",
+        "publisher": "IEEE Xplore Digital Library",
+        "description": """This paper articulates our recent investigation on the properties of highly nonlinear photonic crystal fiber (HN-PCF) with concentrated GeO2 doped core using Finite Element method (FEM). The proposed PCF shows extremely high nonlinearity with very small effective mode area and convenient dispersion characteristics in telecommunication window. Suitable nearly zero dispersion profile at operating wavelength for nonlinear applications can be achieved by tuning the global design parameters.""",
+        "url": "https://ieeexplore.ieee.org/document/7853963",
+    },
+    {
+        "id": 2,
+        "serial": 1,
+        "show": True,
+        "title": "Highly GeO2 doped polarization maintaining PCF for dispersion compensation",
+        "date": "Feb 16, 2017",
+        "publisher": "IEEE Xplore Digital Library",
+        "description": """In this paper a highly GeO2 doped single mode equiangular spiral photonic crystal fiber (HDES-PCF) is proposed to achieve high birefringence with extremely high negative dispersion, higher nonlinearity with low confinement loss for E+S+C+L+U band of interest. From the simulation results, large negative dispersion of -602.7803 ps/nm/km at 1.33 μm and -903.5316 ps/nm/km at 1.55 μm is achieved.""",
+        "url": "https://ieeexplore.ieee.org/document/7853979",
+    },
+    {
+        "id": 3,
+        "serial": 2,
+        "show": True,
+        "title": "Low loss porous-core photonic crystal fiber for long-haul broadband THz transmission",
+        "date": "Feb 16, 2017",
+        "publisher": "IEEE Xplore Digital Library",
+        "description": """This paper presents a novel porous-core photonic crystal fiber (PCF) having extremely low material absorption loss at terahertz window suitable for THz transmission. Finite element method (FEM) is used to investigate the properties of the proposed PCF with a porous core surrounded by a compact cladding structure having hexagonal air holes.""",
+        "url": "https://ieeexplore.ieee.org/document/7853978",
     },
 ]

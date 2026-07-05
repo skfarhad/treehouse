@@ -50,12 +50,12 @@
 
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
-                            <li{% if request.resolver_match.url_name == 'home_template' %} class="active"{% endif %}><a href="{{ context.home }}">Home</a></li>
-                            <li{% if request.resolver_match.url_name == 'experience_template' %} class="active"{% endif %}><a href="{{ context.experience_url }}">Experience</a></li>
-                            <li{% if request.resolver_match.url_name == 'education_template' %} class="active"{% endif %}><a href="{{ context.education_url }}">Education</a></li>
-                            <li{% if request.resolver_match.url_name == 'skills_template' %} class="active"{% endif %}><a href="{{ context.skills_url }}">Skills</a></li>
-                            <li{% if request.resolver_match.url_name == 'services_template' %} class="active"{% endif %}><a href="{{ context.services_url }}">Services</a></li>
-                            <li{% if request.resolver_match.url_name == 'projects_template' %} class="active"{% endif %}><a href="{{ context.projects_url }}">Projects</a></li>
+                            <li{% if request.resolver_match.url_name == 'home_template' %} class="active"{% endif %}><a href="{{ context.home }}"><i class="fa-solid fa-house"></i> Home</a></li>
+                            <li{% if request.resolver_match.url_name == 'experience_template' %} class="active"{% endif %}><a href="{{ context.experience_url }}"><i class="fa-solid fa-briefcase"></i> Experience</a></li>
+                            <li{% if request.resolver_match.url_name == 'education_template' %} class="active"{% endif %}><a href="{{ context.education_url }}"><i class="fa-solid fa-graduation-cap"></i> Education</a></li>
+                            <li{% if request.resolver_match.url_name == 'skills_template' %} class="active"{% endif %}><a href="{{ context.skills_url }}"><i class="fa-solid fa-code"></i> Skills</a></li>
+                            <li{% if request.resolver_match.url_name == 'services_template' %} class="active"{% endif %}><a href="{{ context.services_url }}"><i class="fa-solid fa-concierge-bell"></i> Services</a></li>
+                            <li{% if request.resolver_match.url_name == 'projects_template' %} class="active"{% endif %}><a href="{{ context.projects_url }}"><i class="fa-solid fa-diagram-project"></i> Projects</a></li>
                         </ul>
                     </div><!--/.nav-collapse -->
                 </div>

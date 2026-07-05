@@ -97,9 +97,24 @@ class WorkDetailsPage(DetailsPage):
 class ExperiencePage(ContextPage):
     template_path = 'website/experience.html'
 
+    def get_context(self, request):
+        context = get_nav_urls(request)
+        context.update({
+            'experience': content.get_experience(),
+        })
+        return context
+
 
 class EducationPage(ContextPage):
     template_path = 'website/education.html'
+
+    def get_context(self, request):
+        context = get_nav_urls(request)
+        context.update({
+            'education': content.get_education(),
+            'publications': content.get_publications(),
+        })
+        return context
 
 
 class SkillsPage(ContextPage):

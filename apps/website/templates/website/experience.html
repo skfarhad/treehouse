@@ -12,119 +12,39 @@
                 <article class="col-sm-12 maincontent">
                     <div id="experience">
                         <h1>Job Experience</h1>
-                        <h3 ><a href="https://www.techjays.com/">Techjays</a>,
-                            Dhaka — Software Engineering Lead</h3>
-                        <h4 >August 2025 - Present</h4>
-                        <p>
-                            Leading a team of AI engineers designing and deploying LLM-driven solutions for
-                            client projects. Built an LLM-based content fidelity classification system using
-                            Python, Django, AWS Bedrock, Docker, Kubernetes and GitLab CI for a leading US-based
-                            e-commerce aggregator handling 10K+ SKUs — reducing human intervention for content
-                            fidelity management by 50%.
-                        </p>
-                        <p>
-                            <img src="{% static 'website/assets/images/techjays_srilanka_tour.jpg' %}"
-                                alt="The Techjays team during the AI Summit 2026 in Sri Lanka" width="100%">
-                            With the Techjays team during our Sri Lanka tour for the AI Summit 2026!
-                        </p>
+                        <div class="timeline">
+                            {% for job in context.experience %}
 
-                        <h3 ><a href="https://www.iqvia.com/">IQVIA</a>,
-                            Dhaka — Lead Software Engineer</h3>
-                        <h4 >May 2023 - August 2025</h4>
-                        <p>
-                            Led Back-End development on IQVIA's Orchestrated Analytics and GenAI products,
-                            coordinating a team of Python/AI developers to build an AI-based Chat Assistant and
-                            improve system performance and code quality. Led the integration of the OA Analytics
-                            platform with a client's MS Teams app using Python, FastAPI and the MS Graph API,
-                            improving notification delivery performance by 50%. Also architected a centralized,
-                            event-driven task scheduler with Celery Beat and FastAPI that reduced task
-                            duplication by 90%.
-                        </p>
-                        <p>
-                            <img src="{% static 'website/assets/images/iqvia_cricket_w1.jpg' %}"
-                                alt="" class="" width="100%" >
-                            A happy moment after winning a match with IQVIA teammates!
-                        </p>
-                        <h3 ><a href="https://www.aci-bd.com/">ACI Limited</a>,
-                            Dhaka — AI/Machine Learning Architect</h3>
-                        <h4 >September 2020 - May 2023</h4>
-                        <p>
-                            Implemented the Predictive Analysis for Chemist shops for Pharma business of ACI.
-                            It's a forecast generation process to enable the Pharma field force to plan better with
-                            the help of purchase predictions buying patterns provided by AI algorithms.
+                            <div class="timeline-item">
+                                <div class="timeline-marker">
+                                    <span class="timeline-icon"><i class="fa-solid fa-briefcase"></i></span>
+                                </div>
+                                <div class="timeline-content">
+                                    <div class="timeline-header">
+                                        <h3 class="timeline-title">
+                                            <a href="{{ job.company_url }}">{{ job.company }}</a>
+                                        </h3>
+                                        <span class="timeline-date">{{ job.date_start }} – {{ job.date_end }}</span>
+                                        <span class="timeline-subtitle">{{ job.role }}, {{ job.location }}</span>
+                                    </div>
+                                    <div class="timeline-body">
+                                        {{ job.description|safe }}
+                                    </div>
+                                    {% if job.media %}
+                                    <div class="timeline-media">
+                                        {% for item in job.media %}
+                                        <figure>
+                                            <img src="{% static item.image %}" alt="{{ item.alt }}">
+                                            <figcaption>{{ item.caption }}</figcaption>
+                                        </figure>
+                                        {% endfor %}
+                                    </div>
+                                    {% endif %}
+                                </div>
+                            </div>
 
-                            <br><br>Also Implemented AI driven Chatbot to the consumer brand customers with an
-                            engaging experience and precise information to guide them to proper channel. It also
-                            helps ACI Consumer brands to never miss any business opportunities due to unavoidable
-                            service outage from human agents.
-
-                            <br><br>Guided a team of AI professionals to solve the complex problems
-                            of ACI businesses. Also working with ACI business professionals from different fields
-                            help them to adapt to data driven technologies to improve KPI.<br>
-                        </p>
-                        <p>
-                            <img src="{% static 'website/assets/images/aci_with_team.jpg' %}"
-                                alt="" class="" width="100%" >
-                            With my Python/ML team members!
-                        </p>
-                        <p>
-
-                            <br><br>Worked with user behavior data from Bangladesh’s one of the biggest retail chains-
-                            <a href="https://www.shwapno.com/">Shwapno</a> owned by ACI. Coordinated a small team of AI developers
-                            and Analysts to perform Customer segmentation, Churn analysis, Basket analysis, Purchase prediction.
-
-                        </p>
-
-                        <p>
-                            <img src="{% static 'website/assets/images/aci_office_farewell.jpg' %}"
-                                alt="" class="" width="100%" >
-                            My farewell party at ACI!
-                        </p>
-
-                        <h3 ><a href="http://www.dingi.tech/">Dingi Technologies Ltd.</a>,
-                            Dhaka — Lead, IoT & Enterprise</h3>
-                        <h4 >September 2017 - September 2020</h4>
-                        <p>
-                            Implemented the Back-End APIs & server automation of
-                            <a href="http://www.dingi.tech/teamwork.php">Teamwork platform</a>.
-                            It’s a field-force tracking and task management solution including web and mobile platforms.
-                            Provided APIs for GPS tracking, attendance management, reporting, task management,
-                            reminder, chatting, file sharing, access control and assignment management. Coordinated
-                            a team of Mobile app developers, UX designers and Front-End developers.
-
-                            <br><br>Built the Dingi Vehicle tracking system from the ground up and helped onboard
-                            its first enterprise clients — implementing an IoT server Back-End using Django, Node.js
-                            and Socket.io to handle 50k+ GPS/OBD devices for clients like GrameenPhone.
-
-                            <br><br>Improved the performance of the
-                            <a href="http://www.dingi.tech/api.php">Dingi Map API</a> service by 150% and reduced
-                            AWS cost by 50% by optimizing Python multiprocessing, Django, AWS elastic load balancers
-                            and autoscaling. It’s used by ride-sharing companies and vehicle-tracking providers in
-                            Bangladesh.
-
-                            <br><br>Improved data-pipeline efficiency for the
-                            <a href="http://www.dingi.tech/dingi_life.php">Dingi Life app</a> by 50% and data
-                            accuracy by 80% using PostgreSQL, Elasticsearch and Python.<br>
-
-                        </p>
-                        <p>
-                            <img src="{% static 'website/assets/images/cover_photo.jpeg' %}"
-                                alt="" class="" width="100%" >
-                            Working with great intensity there!
-                        </p>
-                        <br><br>
-
-                        <h3 ><a href="http://codemen.com/">Codemen Solutions</a>,
-                            Dhaka — Software Engineer</h3>
-                        <h4 >April 2016 - August 2017</h4>
-                        <p>
-                            Implemented an intelligent video surveillance system using C# and Emgu CV for
-                            people-movement detection and tracking, achieving detection accuracy up to 70%.
-                            <br><br>Also built a PDF-to-image service for document management using C# and
-                            ImageMagick, improving document-processing efficiency by 50%.
-
-                        </p>
-                        <br><br>
+                            {% endfor %}
+                        </div>
                     </div>
                 </article>
             </div>

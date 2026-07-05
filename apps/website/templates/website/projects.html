@@ -7,19 +7,20 @@
 {% block content %}
     <main id="main">
         <div class="container">
-            <div id="recent-works" class="row section recentworks topspace">
+            <div id="recent-works" class="row section featured topspace">
                 <h2 class="section-title"><span>Projects</span></h2>
-                <div class="thumbnails recentworks row">
+                <div class="row">
                     {% for work in context.projects %}
 
-                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                        <a class="thumbnail" href="{{ work.url }}">
-                            <span class="img">
-                                <img src="{{ work.image_url }}" alt="{{ work.title }}">
-                                <span class="cover"><span class="more">See details &rarr;</span></span>
-                            </span>
-                            <span class="title">{{ work.title }}</span>
-                        </a>
+                    <div class="col-sm-6 col-md-4">
+                        <div class="project-card">
+                            <span class="project-thumb"><img src="{{ work.image_url }}" alt="{{ work.title }}"></span>
+                            <h3>{{ work.title }}</h3>
+                            <p>{{ work.description }}</p>
+                            <p>
+                                <a href="{{ work.url }}" class="read-more">See details &rarr;</a>
+                            </p>
+                        </div>
                     </div>
 
                     {% endfor %}

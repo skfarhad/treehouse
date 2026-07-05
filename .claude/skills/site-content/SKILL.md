@@ -6,28 +6,41 @@ description: Edit the personal website's content (bio, services, recent works, a
 # Editing the Treehouse site content
 
 This site (Sk. Farhad's personal website) uses a **static content model** — there
-is no database for site content (Option A). Content lives in two places:
+is no database for site content (Option A). Almost all content lives in one
+place:
 
 ## 1. Structured content — the content module
 
-The short bio, **services**, and **recent works** live in the site content file
-(`apps/website/content.py`, or the JSON/Markdown source if that's what exists).
-Edit that file to change them — never reintroduce Django models or a DB for this.
+The short bio, **services**, **recent works**, **job experience**,
+**education** and **publications** all live in
+`apps/website/content.py`. Edit that file to change them — never reintroduce
+Django models or a DB for this.
 
-Each **service** / **work** entry has these fields (mirror the existing shape):
-- `title`, `description`, `body_text`
-- `side_para_top` / `side_para_middle` / (`side_para_bottom` for services)
-- `image_url` or `image_path`, optional `video_url`
-- `category` (works only), `serial` (sort order), `show` (visibility toggle)
+- **service** / **work**: `title`, `description`, `body_text`,
+  `side_para_top` / `side_para_middle` / (`side_para_bottom` for services),
+  `image_url` or `image_path`, optional `video_url`, `category` (works only)
+- **experience**: `company`, `company_url`, `role`, `location`, `date_start`,
+  `date_end`, `description` (HTML), `media` (list of `{image, alt, caption}`)
+- **education**: same shape as experience but `institution` /
+  `institution_url` / `degree` instead of `company` / `role`
+- **publications**: `title`, `date`, `publisher`, `description` (plain text),
+  `url`
 
-To hide an entry without deleting it, set `show = False`. To reorder, change
-`serial`.
+All entries share `serial` (sort order, ascending) and `show` (visibility
+toggle) — set `show = False` to hide an entry without deleting it.
+
+These render via the `timeline-*` / `publication-*` CSS classes in
+`apps/website/static/website/assets/css/styles.css` (Experience and
+Education pages) and the `service-card` / `project-card` classes (Services
+and Projects pages) — the shared design system for this site. Reuse those
+classes for new sections rather than inventing new inline styles.
 
 ## 2. Prose content — the templates
 
-The **About page** (experience, technical skills, education, publications) is
-hardcoded in `apps/website/templates/website/about.html`. The footer contact
-info is in `base.html`. Edit these templates directly for prose changes.
+Page framing (headings like "Job Experience", intro copy) lives in the
+templates themselves (`experience.html`, `education.html`, `skills.html`).
+The footer contact info is in `base.html`. Edit these templates directly for
+that kind of prose change.
 
 ## Rules
 

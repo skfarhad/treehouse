@@ -34,44 +34,6 @@
 
             <div id="services" class="row section featured topspace">
                 <h2 class="section-title"><span>Services</span></h2>
-                <style>
-                    #services .service-card {
-                        display: flex;
-                        flex-direction: column;
-                        align-items: center;
-                        height: 100%;
-                        padding: 28px 20px;
-                        margin-bottom: 20px;
-                        border: 1px solid #ececec;
-                        border-radius: 6px;
-                        text-align: center;
-                        transition: box-shadow 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
-                    }
-                    #services .service-card:hover {
-                        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
-                        border-color: #f6c8da;
-                        transform: translateY(-3px);
-                    }
-                    #services .service-icon {
-                        flex: 0 0 64px;
-                        width: 64px;
-                        height: 64px;
-                        border-radius: 50%;
-                        background: #fdeaf0;
-                        color: #bd1550;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        font-size: 26px;
-                        margin-bottom: 16px;
-                    }
-                    #services .service-card h3 {
-                        margin-top: 0;
-                    }
-                    #services .service-card p {
-                        flex: 1 1 auto;
-                    }
-                </style>
                 <div class="row">
                     {% for service in context.services|slice:":3" %}
 
@@ -88,29 +50,30 @@
 
                     {% endfor %}
                 </div>
-                <p class="text-center">
+                <p class="text-center cards-more">
                     <a href="{{ context.services_url }}" class="btn btn-action">View all services</a>
                 </p>
             </div> <!-- / section -->
 
-            <div id="recent-works" class="row section recentworks topspace">
+            <div id="recent-works" class="row section featured topspace">
                 <h2 class="section-title"><span>Recent Projects</span></h2>
-                <div class="thumbnails recentworks row">
+                <div class="row">
                     {% for work in context.recent_works|slice:":3" %}
 
-                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                        <a class="thumbnail" href="{{ work.url }}">
-                            <span class="img">
-                                <img src="{{ work.image_url }}" alt="{{ work.title }}">
-                                <span class="cover"><span class="more">See details &rarr;</span></span>
-                            </span>
-                            <span class="title">{{ work.title }}</span>
-                        </a>
+                    <div class="col-sm-6 col-md-4">
+                        <div class="project-card">
+                            <span class="project-thumb"><img src="{{ work.image_url }}" alt="{{ work.title }}"></span>
+                            <h3>{{ work.title }}</h3>
+                            <p>{{ work.description }}</p>
+                            <p>
+                                <a href="{{ work.url }}" class="read-more">See details &rarr;</a>
+                            </p>
+                        </div>
                     </div>
 
                     {% endfor %}
                 </div>
-                <p class="text-center">
+                <p class="text-center cards-more">
                     <a href="{{ context.projects_url }}" class="btn btn-action">View all projects</a>
                 </p>
             </div> <!-- /section -->

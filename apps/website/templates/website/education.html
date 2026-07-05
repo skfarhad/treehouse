@@ -10,106 +10,66 @@
         <div class="container">
             <div class="row topspace">
                 <article class="col-sm-12 maincontent">
-                    <div id="education" >
-                        <h1 >Education</h1>
-                        <h3 >Bangladesh University of Engineering & Technology (BUET),
-                            Dhaka — BSc in Electrical & Electronic Engineering</h3>
-                        <h4 >February 2011 - March 2016</h4>
-                        <p>
-                            Did my undergrad from BUET. Concentrating on Electrical & electronic
-                            Engineering. Had a lot of fun while doing my undergrad. Had the opportunity
-                            to meet some outstanding people there. My major was communication and minor
-                            was electronics. My undergraduate thesis was on Photonic Crystal Fibers, which
-                            led to three published IEEE research articles (see Publications below).
-                            Not totally happy with my CGPA though! Could've done so
-                            much better. That's because I was pursuing so many things at the same time
-                            like developing programming and software development skills which was outside
-                            of my curriculum.
-                            People are not good at multi-tasking. Lesson learned indeed!
-                        </p>
+                    <div id="education">
+                        <h1>Education</h1>
+                        <div class="timeline">
+                            {% for school in context.education %}
 
-                        <p>
-                            <img src="{% static 'website/assets/images/cover_photo_convo.jpg' %}"
-                                alt="" class="" width="100%" >
-                            A nice photo challenge for you. See if you can find me in this picture!
-                        </p>
-                        <br>
-                        <br>
+                            <div class="timeline-item">
+                                <div class="timeline-marker">
+                                    <span class="timeline-icon"><i class="fa-solid fa-graduation-cap"></i></span>
+                                </div>
+                                <div class="timeline-content">
+                                    <div class="timeline-header">
+                                        <h3 class="timeline-title">
+                                            {% if school.institution_url %}
+                                            <a href="{{ school.institution_url }}">{{ school.institution }}</a>
+                                            {% else %}
+                                            {{ school.institution }}
+                                            {% endif %}
+                                        </h3>
+                                        <span class="timeline-date">{{ school.date_start }} – {{ school.date_end }}</span>
+                                        <span class="timeline-subtitle">{{ school.degree }}, {{ school.location }}</span>
+                                    </div>
+                                    <div class="timeline-body">
+                                        {{ school.description|safe }}
+                                    </div>
+                                    {% if school.media %}
+                                    <div class="timeline-media">
+                                        {% for item in school.media %}
+                                        <figure>
+                                            <img src="{% static item.image %}" alt="{{ item.alt }}">
+                                            <figcaption>{{ item.caption }}</figcaption>
+                                        </figure>
+                                        {% endfor %}
+                                    </div>
+                                    {% endif %}
+                                </div>
+                            </div>
 
-                        <h3 >Rifles Public School &amp; College, Dhaka — HSC in
-                            Science
-                        </h3>
-                        <h4 >August 2008 - July 2010</h4>
-                        <p>
-                            Studied my HSC here. That was a short period of 2 year that just
-                            in a flash! Met some friends though. And some generous teachers.
-                            My uncle was a lecturer back then that was really helpful.
-                        </p>
+                            {% endfor %}
+                        </div>
                     </div>
-                    <div id="publications" >
-                        <h1 >Publications</h1>
 
-                        <h3 >
-                            Ultra-high nonlinear photonic crystal fiber with GeO2 doped core
-                        </h3>
-                        <h4 >Publishing date: Feb 16, 2017</h4>
-                        <h4 >Publisher: IEEE Xplore Digital Library</h4>
-                        <p>
-                            This paper articulates our recent investigation on the properties
-                            of highly nonlinear photonic crystal fiber (HN-PCF) with concentrated
-                            GeO2 doped core using Finite Element method (FEM).
-                            The proposed PCF shows extremely high nonlinearity with very small
-                            effective mode area and convenient dispersion characteristics
-                            in telecommunication window. Suitable nearly zero dispersion
-                            profile at operating wavelength for nonlinear applications can
-                            be achieved by tuning the global design parameters.
-                        </p>
-                        <button>
-                            <a href="https://ieeexplore.ieee.org/document/7853963">View Article</a>
-                        </button>
+                    <div id="publications" class="topspace">
+                        <h1>Publications</h1>
+                        <div class="publication-list">
+                            {% for pub in context.publications %}
 
-                        <br><br>
+                            <div class="publication-item">
+                                <h3 class="publication-title">{{ pub.title }}</h3>
+                                <p class="publication-meta">
+                                    <span><i class="fa-regular fa-calendar"></i> {{ pub.date }}</span>
+                                    <span><i class="fa-solid fa-building-columns"></i> {{ pub.publisher }}</span>
+                                </p>
+                                <div class="publication-body">
+                                    <p>{{ pub.description }}</p>
+                                </div>
+                                <a href="{{ pub.url }}" class="read-more">View article &rarr;</a>
+                            </div>
 
-                        <h3 >
-                            Highly GeO2 doped polarization maintaining
-                            PCF for dispersion compensation
-                        </h3>
-                        <h4 >Publishing date: Feb 16, 2017</h4>
-                        <h4 >Publisher: IEEE Xplore Digital Library</h4>
-                        <p>
-                            In this paper a highly GeO2 doped single mode equiangular
-                            spiral photonic crystal fiber (HDES-PCF) is proposed to achieve
-                            high birefringence with extremely high negative dispersion, higher
-                            nonlinearity with low confinement loss for E+S+C+L+U
-                            band of interest. From the simulation results, large
-                            negative dispersion of -602.7803 ps/nm/km at 1.33 μm
-                            and -903.5316 ps/nm/km at 1.55 μm is achieved.
-                        </p>
-                        <button>
-                            <a href="https://ieeexplore.ieee.org/document/7853979">View Article</a>
-                        </button>
-
-                        <br><br>
-
-                        <h3 >
-                            Low loss porous-core photonic crystal fiber for long-haul
-                            broadband THz transmission
-                        </h3>
-                        <h4 >Publishing date: Feb 16, 2017</h4>
-                        <h4 >Publisher: IEEE Xplore Digital Library</h4>
-                        <p>
-                            This paper presents a novel porous-core photonic crystal
-                            fiber (PCF) having extremely low material absorption loss
-                            at terahertz window suitable for THz transmission.
-                            Finite element method (FEM) is used to investigate the
-                            properties of the proposed PCF with a porous core
-                            surrounded by a compact cladding structure having
-                            hexagonal air holes.
-                        </p>
-                        <button>
-                            <a href="https://ieeexplore.ieee.org/document/7853978">View Article</a>
-                        </button>
-                        <br><br>
+                            {% endfor %}
+                        </div>
                     </div>
                 </article>
             </div>
