@@ -49,17 +49,6 @@ class HomePage(ContextPage):
         return context
 
 
-class ServicesPage(ContextPage):
-    template_path = 'website/services.html'
-
-    def get_context(self, request):
-        context = get_nav_urls(request)
-        context.update({
-            'services': attach_urls(content.get_services(), context['service_details']),
-        })
-        return context
-
-
 class ServiceDetailsPage(DetailsPage):
     template_path = 'website/service_details.html'
     url_suffix = 'service_details'
@@ -87,5 +76,13 @@ class WorkDetailsPage(DetailsPage):
         return content.get_work(obj_id)
 
 
-class AboutPage(ContextPage):
-    template_path = 'website/about.html'
+class ExperiencePage(ContextPage):
+    template_path = 'website/experience.html'
+
+
+class EducationPage(ContextPage):
+    template_path = 'website/education.html'
+
+
+class SkillsPage(ContextPage):
+    template_path = 'website/skills.html'

@@ -5,8 +5,9 @@ def get_url(request, prefix, uri):
 def get_nav_urls(request):
     return {
         'home': get_url(request, '/website/', 'home/'),
-        'about': get_url(request, '/website/', 'about/'),
-        'services_url': get_url(request, '/website/', 'services/'),
+        'experience_url': get_url(request, '/website/', 'experience/'),
+        'education_url': get_url(request, '/website/', 'education/'),
+        'skills_url': get_url(request, '/website/', 'skills/'),
         'projects_url': get_url(request, '/website/', 'projects/'),
         'service_details': get_url(request, '/website/', 'service-details/'),
         'work_details': get_url(request, '/website/', 'work-details/'),
