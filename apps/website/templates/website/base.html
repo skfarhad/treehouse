@@ -55,91 +55,10 @@
                             <li{% if request.resolver_match.url_name == 'education_template' %} class="active"{% endif %}><a href="{{ context.education_url }}">Education</a></li>
                             <li{% if request.resolver_match.url_name == 'skills_template' %} class="active"{% endif %}><a href="{{ context.skills_url }}">Skills</a></li>
                             <li{% if request.resolver_match.url_name == 'projects_template' %} class="active"{% endif %}><a href="{{ context.projects_url }}">Projects</a></li>
-                            <li><a href="#" data-toggle="modal"
-                                   data-target="#myModal" style="cursor: pointer;"
-                                    >Contact</a></li>
-                            <!--
-                            <li><a href="{{ context.blog }}">Blog</a></li>
-                            <li class="dropdown">
-                                <a href="" class="dropdown-toggle"
-                                   data-toggle="dropdown">More<b class="caret">
-                                </b>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="{{ context.sidebar_left }}">Left Sidebar</a></li>
-                                    <li><a href="{{ context.sidebar_right }}">Right Sidebar</a></li>
-                                    <li><a href="{{ context.blog_post }}">Blog Post</a></li>
-                                </ul>
-                            </li>
-                            -->
                         </ul>
                     </div><!--/.nav-collapse -->
                 </div>
             </nav>
-
-            <div class="modal" id="myModal">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                      <form action="https://getform.io/f/bpjpwmqb" method="POST">
-                        <!-- Modal Header -->
-                        <div class="modal-header">
-                            <div class="widget-body">
-                                <p>You can reach me directly by email:<br>
-                                    <i class="fa-solid fa-envelope"></i>
-                                    <a href="mailto:sk.farhad.eee@gmail.com">
-                                        sk.farhad.eee@gmail.com
-                                    </a>
-                                    <br>
-                                    You can also use the following form-
-                                </p>
-                            </div>
-                          <h4 class="modal-title">Details</h4>
-                          <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        </div>
-
-                        <!-- Modal body -->
-                        <div class="modal-body">
-
-                            <div class="form-group">
-                              <label for="email">Email:</label>
-                              <input type="email" class="form-control" id="email"
-                                     placeholder="Enter email" name="email">
-                            </div>
-
-                            <div class="form-group">
-                              <label for="full-name">Full name:</label>
-                              <input type="text" class="form-control" id="full-name"
-                                     placeholder="Enter full name" name="full-name">
-                            </div>
-
-                            <div class="form-group">
-                              <label for="subject">Subject:</label>
-                              <input type="text" class="form-control" id="subject"
-                                     placeholder="Mention Subject" name="subject">
-                            </div>
-
-                            <div class="form-group">
-                                <input type="hidden" name="_gotcha" style="display:none !important">
-                            </div>
-
-                            <div class="form-group">
-                              <label for="email-body">Message:</label>
-                              <textarea class="form-control" rows="5" id="email-body"
-                                     name="email-body">
-                              </textarea>
-                            </div>
-
-                        </div>
-
-                        <!-- Modal footer -->
-                        <div class="modal-footer">
-                            <button type="submit" class="btn btn-success">SEND</button>
-                           <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                        </div>
-                      </form>
-                  </div>
-                </div>
-            </div>
         </header>
     </div>
 
@@ -151,7 +70,7 @@
             <div class="row">
 
                 <!-- Follow Me Section -->
-                <div class="col-xs-12 widget text-center">
+                <div class="col-xs-12 col-sm-6 widget text-center">
                     <h3 class="widget-title">Follow me</h3>
                     <div class="widget-body">
                         <p class="follow-me-icons mb-3">
@@ -161,6 +80,19 @@
                             <a href="https://www.facebook.com/iskfarhad"><i class="fa-brands fa-facebook me-2"></i></a>
                             <a href="https://www.youtube.com/@iskfarhad"><i class="fa-brands fa-youtube me-2"></i></a>
                             <a href="https://www.instagram.com/_skfarhad"><i class="fa-brands fa-instagram me-2"></i></a>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Contact Section -->
+                <div class="col-xs-12 col-sm-6 widget text-center">
+                    <h3 class="widget-title">Contact</h3>
+                    <div class="widget-body">
+                        <p>
+                            <i class="fa-solid fa-envelope"></i>
+                            <a href="mailto:farhad@techjays.com">farhad@techjays.com</a> (Work)<br>
+                            <i class="fa-solid fa-envelope"></i>
+                            <a href="mailto:sk.farhad.eee@gmail.com">sk.farhad.eee@gmail.com</a> (Personal)
                         </p>
                     </div>
                 </div>
