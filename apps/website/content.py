@@ -55,7 +55,7 @@ def get_work(obj_id):
 
 
 
-SHORT_BIO = """I'm a Lead Software Engineer, currently working at <a href="https://www.iqvia.com/"> IQVIA, Dhaka. </a>  I've <b>over 9 years</b> of experience in <b>Python, Django, FastAPI,</b> and <b>AWS</b>, implementing <b>backend</b> services for mobile/web applications. Specialized in <b>API development, data pipelines, cloud deployment, automation,</b> and <b>agentic AI</b> applications using the Python-based ecosystem. Seeking impactful roles to leverage my expertise in building innovative products that create real value for businesses."""
+SHORT_BIO = """I'm a Software Engineering Lead, currently working at <a href="https://www.techjays.com/"> Techjays. </a>  I've <b>9+ years</b> of experience in <b>backend engineering</b> — building scalable <b>APIs</b>, server automation, and the systems that power modern web and mobile apps. Strong expertise in <b>Python, Django, FastAPI</b> and <b>AWS</b>, with a deep focus on reliable systems and clean architecture. I'm fluent across the <b>AI/ML</b> ecosystem — from machine learning to <b>LLMs</b> and scalable data pipelines — and passionate about bringing <b>agentic AI</b> into real-world products with frameworks like <b>LangChain</b> and <b>LangGraph</b>. Exploring opportunities that combine backend engineering and AI to build products that matter and systems that deliver real value."""
 
 
 SERVICES = [
@@ -265,6 +265,9 @@ WORKS = [
 </p>
 <p>
 Beyond simple tracking, ChatExpense is your AI-powered financial assistant. It goes beyond just logging expenses — offering smart insights, spending patterns, future predictions, personalized deals, and investment suggestions based on your financial behavior.
+</p>
+<p>
+Since launch, ChatExpense has grown to <b>1300+ registered users</b> on the web and <b>100+ installs</b> on the Google Play Store, cutting expense-logging time by up to <b>70%</b> through multimodal (text, voice, and receipt-image) input.
 </p>
 
 <h3>Product USP</h3>
@@ -539,6 +542,30 @@ All data is encrypted and backed by enterprise security practices. </li>
 <blockquote>
 Ensuring high quality maintenance work should be the focus, data logging will be handled by ScanFixnow!
 </blockquote>
+""",
+    },
+    {
+        "id": 7,
+        "title": """Wapptel""",
+        "serial": 4,
+        "show": False,  # hidden until a thumbnail image is added (set image_url below)
+        "category": "",
+        "image_url": None,
+        "image_path": "",
+        "video_url": None,
+        "description": """Wapptel is a WhatsApp automation platform for marketing campaigns — enabling automated broadcast and interaction workflows for businesses.""",
+        "side_para_top": "",
+        "side_para_middle": "",
+        "body_text": """
+<p>
+Wapptel is a WhatsApp automation platform built for marketing campaigns. It lets businesses run automated broadcasts and two-way interaction workflows to reach and engage their audience at scale.
+</p>
+<h3>My Contributions</h3>
+<ul>
+    <li>Designed and built the platform Back-End using Django, DRF and PostgreSQL.</li>
+    <li>Implemented WhatsApp automation and messaging workflows with Node.js and Baileys JS.</li>
+    <li>Built campaign scheduling and background processing with Celery.</li>
+</ul>
 """,
     },
 ]
