@@ -8,9 +8,13 @@
     <main id="main">
         <div class="container">
             <div class="row section topspace">
-                <div class="col-md-12">
-                    <p class="lead text-center text-muted">
-                        {{ context.short_bio |safe}}
+                <div class="col-md-10 col-md-offset-1">
+                    <p class="lead intro-text">
+                        {{ context.short_bio |safe }}
+                    </p>
+                    <p class="intro-callout">
+                        <span class="intro-callout-icon"><i class="fa-solid fa-briefcase"></i></span>
+                        <span>{{ context.currently_open_to|safe }}</span>
                     </p>
                 </div>
             </div> <!-- / section -->

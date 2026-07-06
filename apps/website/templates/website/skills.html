@@ -121,7 +121,7 @@
 
                         <h1>Technical Skills</h1>
                         <p class="skill-intro">
-                            9+ years in the software industry, mainly on the back-end and
+                            {{ context.years_of_experience }}+ years in the software industry, mainly on the back-end and
                             server side — designing APIs, automating servers and scaling
                             infrastructure for location-based services and e-commerce
                             platforms at companies like Techjays, IQVIA and Dingi. Over the
@@ -179,9 +179,7 @@
                                     to 1,300+ web users and 100+ Play Store installs, cutting
                                     logging time by up to 70%. The same stack drives the
                                     <a href="{{ context.work_details }}?id=4">Hazard Reporting System</a>'s
-                                    incident and volunteer APIs, the QR-driven maintenance
-                                    logging behind <a href="{{ context.work_details }}?id=6">ScanFixNow</a>,
-                                    and the surveillance API behind
+                                    incident and volunteer APIs and the surveillance API behind
                                     <a href="{{ context.work_details }}?id=8">MarketWiki BD</a>.
                                     For anything that needs to push updates to the browser in
                                     real time — live game turns on
@@ -198,7 +196,6 @@
                                         <span class="label-lead">Shipped in</span>
                                         <a href="{{ context.work_details }}?id=1">ChatExpense <i class="fa-solid fa-arrow-right"></i></a>
                                         <a href="{{ context.work_details }}?id=4">Hazard Reporting System <i class="fa-solid fa-arrow-right"></i></a>
-                                        <a href="{{ context.work_details }}?id=6">ScanFixNow <i class="fa-solid fa-arrow-right"></i></a>
                                         <a href="{{ context.work_details }}?id=7">Wapptel <i class="fa-solid fa-arrow-right"></i></a>
                                         <a href="{{ context.work_details }}?id=8">MarketWiki BD <i class="fa-solid fa-arrow-right"></i></a>
                                         <a href="{{ context.work_details }}?id=9">High Command <i class="fa-solid fa-arrow-right"></i></a>
@@ -214,9 +211,8 @@
                                 <div class="skill-body">
                                     <p>Just enough UI to make the back-end usable — I'm a
                                     backend engineer first, but I've shipped the customer-facing
-                                    screens for <a href="{{ context.work_details }}?id=1">ChatExpense</a>,
-                                    <a href="{{ context.work_details }}?id=6">ScanFixNow</a> and
-                                    <a href="{{ context.work_details }}?id=8">MarketWiki BD</a>
+                                    screens for <a href="{{ context.work_details }}?id=1">ChatExpense</a>
+                                    and <a href="{{ context.work_details }}?id=8">MarketWiki BD</a>
                                     myself rather than waiting on a dedicated front-end hire.
                                     <a href="{{ context.work_details }}?id=9">High Command</a>
                                     needed something different — a real-time game canvas — so
@@ -230,7 +226,6 @@
                                     <div class="skill-used">
                                         <span class="label-lead">Shipped in</span>
                                         <a href="{{ context.work_details }}?id=1">ChatExpense <i class="fa-solid fa-arrow-right"></i></a>
-                                        <a href="{{ context.work_details }}?id=6">ScanFixNow <i class="fa-solid fa-arrow-right"></i></a>
                                         <a href="{{ context.work_details }}?id=8">MarketWiki BD <i class="fa-solid fa-arrow-right"></i></a>
                                         <a href="{{ context.work_details }}?id=9">High Command <i class="fa-solid fa-arrow-right"></i></a>
                                     </div>
@@ -274,7 +269,7 @@
                             <div class="skill-section">
                                 <div class="skill-label">
                                     <span class="skill-icon"><i class="fa-solid fa-robot"></i></span>
-                                    <h3>AI/ML & Agentic AI</h3>
+                                    <h3>ML and Agentic AI</h3>
                                 </div>
                                 <div class="skill-body">
                                     <p>LangChain and LangGraph are what I reach for when a

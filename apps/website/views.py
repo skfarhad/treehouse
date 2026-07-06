@@ -43,6 +43,7 @@ class HomePage(ContextPage):
         context = get_nav_urls(request)
         context.update({
             'short_bio': content.get_short_bio(),
+            'currently_open_to': content.get_currently_open_to(),
             'services': attach_urls(content.get_services(), context['service_details']),
             'recent_works': attach_urls(content.get_works(), context['work_details']),
         })
@@ -119,3 +120,10 @@ class EducationPage(ContextPage):
 
 class SkillsPage(ContextPage):
     template_path = 'website/skills.html'
+
+    def get_context(self, request):
+        context = get_nav_urls(request)
+        context.update({
+            'years_of_experience': content.get_years_of_experience(),
+        })
+        return context

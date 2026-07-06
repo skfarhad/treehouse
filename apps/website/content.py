@@ -6,6 +6,10 @@ job history, education or publications. There is no admin panel and no
 database for site content. See ``.claude/skills/site-content/SKILL.md`` for
 guidance.
 
+``YEARS_OF_EXPERIENCE`` is the single source of truth for the "N+ years"
+figure — it's interpolated into ``SHORT_BIO`` and passed to the Skills page.
+Bump this one number rather than editing the figure in multiple places.
+
 Fields mirror the old models so templates need no changes:
   service: id, title, serial, show, image_url, image_path, video_url,
            description, side_para_top, side_para_middle, side_para_bottom,
@@ -52,6 +56,14 @@ def get_short_bio():
     return SHORT_BIO
 
 
+def get_currently_open_to():
+    return CURRENTLY_OPEN_TO
+
+
+def get_years_of_experience():
+    return YEARS_OF_EXPERIENCE
+
+
 def get_services():
     """Visible services, sorted by serial."""
     return _visible(SERVICES)
@@ -86,7 +98,13 @@ def get_publications():
 
 
 
-SHORT_BIO = """I'm a Software Engineering Lead, currently working at <a href="https://www.techjays.com/"> Techjays. </a>  I've <b>9+ years</b> of experience in <b>backend engineering</b> — building scalable <b>APIs</b>, server automation, and the systems that power modern web and mobile apps. Strong expertise in <b>Python, Django, FastAPI</b> and <b>AWS</b>, with a deep focus on reliable systems and clean architecture. I'm fluent across the <b>AI/ML</b> ecosystem — from machine learning to <b>LLMs</b> and scalable data pipelines — and passionate about bringing <b>agentic AI</b> into real-world products with frameworks like <b>LangChain</b> and <b>LangGraph</b>. Exploring opportunities that combine backend engineering and AI to build products that matter and systems that deliver real value."""
+# Single source of truth for "years of experience" — update this one number
+# and every page that mentions it (home bio, skills intro, ...) follows.
+YEARS_OF_EXPERIENCE = 10
+
+SHORT_BIO = f"""I'm a Software Engineering Lead, currently working at <a href="https://www.techjays.com/">Techjays</a>. I've <b>{YEARS_OF_EXPERIENCE}+ years</b> of experience in backend engineering, building scalable APIs, server automation, and the systems that power modern web and mobile apps, with strong expertise in <b>Python</b>, <b>Django</b>, FastAPI and <b>AWS</b>. I'm also fluent across the AI ecosystem, from classical ML to LLMs, scalable data pipelines and <b>RAG</b> systems, and I've been shipping agentic AI into real-world products with frameworks like <b>LangChain</b> and <b>LangGraph</b>."""
+
+CURRENTLY_OPEN_TO = """Open to <b>Technical Lead</b> and <b>Engineering Manager</b> roles where solid backend engineering meets applied AI, leading teams, owning architecture, and shipping production AI systems."""
 
 
 SERVICES = [
@@ -100,7 +118,7 @@ SERVICES = [
         "image_path": "",
         "hero_image": "website/assets/images/services/technical-leadership.webp",
         "video_url": None,
-        "description": """I lead engineering and AI teams from idea to production — owning architecture, code quality, delivery and mentoring. Open to Technical Lead and Engineering Manager roles where solid backend engineering meets applied AI.""",
+        "description": """I lead engineering and AI teams from idea to production, owning architecture, code quality, delivery and mentoring. Open to Technical Lead and Engineering Manager roles where solid backend engineering meets applied AI.""",
         "side_para_top": "",
         "side_para_middle": "",
         "side_para_bottom": "",
@@ -134,7 +152,7 @@ Recent examples: leading a team of AI engineers building LLM-driven solutions at
         "image_path": "",
         "hero_image": "website/assets/images/services/rapid-mvp.webp",
         "video_url": None,
-        "description": """Have an idea that needs to become a real product fast? As a solo builder I take ideas from zero to a deployed, full-stack MVP — backend, AI and cloud — the way I built ChatExpense and ScanFixNow.""",
+        "description": """Have an idea that needs to become a real product fast? As a solo builder I take ideas from zero to a deployed, full-stack MVP, spanning backend, AI and cloud, the way I built ChatExpense.""",
         "side_para_top": "",
         "side_para_middle": "",
         "side_para_bottom": "",
@@ -145,7 +163,6 @@ Sometimes you don't need a whole team — you need one experienced builder who c
 <h3>Products I've built solo</h3>
 <ul>
     <li><b>ChatExpense</b> — an AI-powered expense tracker (Django, DRF, PostgreSQL, OpenAI, LangGraph); grew to 1300+ registered users with a Google Play app.</li>
-    <li><b>ScanFixNow</b> — QR-code-based maintenance incident logging for appliances and installations.</li>
     <li><b>stocksurferbd</b> — a published Python library for Dhaka & Chittagong stock-exchange data.</li>
     <li><b>Wapptel</b> — a WhatsApp marketing-automation platform.</li>
 </ul>
@@ -256,7 +273,7 @@ I can help you achieve full abstraction for the backend APIs so that you can foc
     },
     {
         "id": 3,
-        "title": """AI & LLM Engineering""",
+        "title": """Agentic AI Solutions""",
         "serial": 1,
         "show": True,
         "icon": "fa-solid fa-robot",
@@ -299,7 +316,7 @@ I can help you achieve full abstraction for the backend APIs so that you can foc
         "image_path": "",
         "hero_image": "website/assets/images/services/engineering-mentorship.webp",
         "video_url": None,
-        "description": """Paid 1:1 mentorship for junior and mid-level engineers. In the AI-tooling era it's easy to ship code you don't fully understand — I help you build the underlying judgment (debugging, architecture, code review instincts) that AI assistants can't hand you.""",
+        "description": """Paid 1:1 mentorship for junior and mid-level engineers. In the AI-tooling era it's easy to ship code you don't fully understand. I help you build the underlying judgment (debugging, architecture, code review instincts) that AI assistants can't hand you.""",
         "side_para_top": "",
         "side_para_middle": "",
         "side_para_bottom": "",
@@ -382,7 +399,7 @@ WORKS = [
         "image_url": """https://chatexpense-landing-page.s3.us-west-2.amazonaws.com/images/chatexpense_web.jpg""",
         "image_path": """para_images/slide1.png""",
         "video_url": None,
-        "description": """ChatExpense is my latest brain-child, an AI-powered personal finance assistant that helps users effortlessly track and manage their spending. Users can log expenses through voice, text, or photos of receipts — and our AI automatically categorizes transactions, identifies spending patterns, and generates personalized insights.""",
+        "description": """ChatExpense is my latest brain-child, an AI-powered personal finance assistant that helps users effortlessly track and manage their spending. Users can log expenses through voice, text, or photos of receipts, and our AI automatically categorizes transactions, identifies spending patterns, and generates personalized insights.""",
         "side_para_top": "",
         "side_para_middle": "",
         "body_text": """
@@ -483,7 +500,7 @@ The initiail version of Dingi Map plaformI was not production ready and not easy
         "image_url": """https://raw.githubusercontent.com/skfarhad/hazard_reporting_system/refs/heads/main/live_dashboard.jpeg""",
         "image_path": """para_images/search-1.png""",
         "video_url": None,
-        "description": """SMS Based Hazard Reporting System for Flood Affected people of Bangladesh""",
+        "description": """SMS Based Hazard Reporting System for Flood Affected people of Bangladesh. Distressed individuals with only a basic mobile phone can report an emergency over SMS, which is geo-tracked and automatically matched with the nearest available volunteer for a coordinated rescue, with every report visible on a live GIS dashboard.""",
         "side_para_top": """
 <p>
 <img src="https://raw.githubusercontent.com/skfarhad/hazard_reporting_system/refs/heads/main/architecture_roadmap.jpg" alt="" 
@@ -622,12 +639,12 @@ cd_plot.show_plot(data_n=120, resample=True, step='3D')
         "id": 6,
         "title": """ScanFixNow""",
         "serial": 6,
-        "show": True,
+        "show": False,
         "category": "",
         "image_url": """https://scanfixnow-landing-page.s3.us-west-2.amazonaws.com/images/scnfixnow_onboarding.jpg""",
         "image_path": "",
         "video_url": None,
-        "description": """QR-Powered Maintenance Logging.  Scan. Report. Fix. Simplify maintenance tracking with QR-code based incident reporting.""",
+        "description": """QR-Powered Maintenance Logging. Scan. Report. Fix. Simplify maintenance tracking with QR-code based incident reporting. Building managers and residents scan a code on a lift, generator or other installation, describe the issue in seconds, and the vendor gets a real-time, priority-tracked ticket with a full repair history for every site.""",
         "side_para_top": "",
         "side_para_middle": "",
         "body_text": """
@@ -687,7 +704,7 @@ Ensuring high quality maintenance work should be the focus, data logging will be
         "image_url": """/static/website/assets/images/wapptel_service.png""",
         "image_path": "",
         "video_url": None,
-        "description": """Small and medium businesses want to run WhatsApp marketing campaigns without paying for the official WhatsApp Business API. Wapptel gives them bulk messaging, contact management and campaign tracking on top of WhatsApp Web — with the safety rails (rate limiting, phone validation) to avoid getting numbers banned.""",
+        "description": """Small and medium businesses want to run WhatsApp marketing campaigns without paying for the official WhatsApp Business API. Wapptel gives them bulk messaging, contact management and campaign tracking on top of WhatsApp Web, with the safety rails (rate limiting, phone validation) to avoid getting numbers banned.""",
         "side_para_top": "",
         "side_para_middle": "",
         "body_text": """
@@ -759,7 +776,7 @@ Django REST Framework backend with JWT/API-key auth and drf-spectacular for the 
         "image_url": """/static/website/assets/images/highcommand_game.png""",
         "image_path": "",
         "video_url": None,
-        "description": """Turn-based strategy games running game logic separately on the server and in the browser risk the two falling out of sync — letting a client desync into an unfair or exploitable state. High Command is a deterministic, real-time strategic wargame where the same core rules engine runs, verifiably identically, on both sides.""",
+        "description": """Turn-based strategy games running game logic separately on the server and in the browser risk the two falling out of sync, letting a client desync into an unfair or exploitable state. High Command is a deterministic, real-time strategic wargame where the same core rules engine runs, verifiably identically, on both sides.""",
         "side_para_top": "",
         "side_para_middle": "",
         "body_text": """
@@ -916,7 +933,10 @@ Improved data-pipeline efficiency for the <a href="http://www.dingi.tech/dingi_l
         "date_end": "August 2017",
         "description": """
 <p>
-Implemented an intelligent video surveillance system using C# and Emgu CV for people-movement detection and tracking, achieving detection accuracy up to 70%.
+My first job. Landed this programming-based role straight out of an EEE degree on sheer interest and self-built portfolio projects rather than a formal CS background. It gave me my first real exposure to surveillance system development and IoT projects.
+</p>
+<p>
+Implemented an intelligent video surveillance system using C#, Emgu CV, OpenCV, YOLO and Python for people-movement detection and tracking, achieving detection accuracy up to 70%.
 </p>
 <p>
 Also built a PDF-to-image service for document management using C# and ImageMagick, improving document-processing efficiency by 50%.
@@ -940,7 +960,7 @@ EDUCATION = [
         "date_end": "March 2016",
         "description": """
 <p>
-Did my undergrad from BUET. Concentrating on Electrical & Electronic Engineering. Had a lot of fun while doing my undergrad. Had the opportunity to meet some outstanding people there. My major was communication and minor was electronics. My undergraduate thesis was on Photonic Crystal Fibers, which led to three published IEEE research articles (see Publications below). Not totally happy with my CGPA though! Could've done so much better. That's because I was pursuing so many things at the same time like developing programming and software development skills which was outside of my curriculum. People are not good at multi-tasking. Lesson learned indeed!
+Did my undergrad from BUET, concentrating on Electrical & Electronic Engineering. Had a lot of fun while doing my undergrad and got to meet some outstanding people there. My major was communication and minor was electronics. My undergraduate thesis was on Photonic Crystal Fibers, which led to three published IEEE research articles (see Publications below). The courses I enjoyed most were Digital Signal Processing, Optical Fiber Communication, Numerical Methods, Signals and Systems, Random Signal Processing, and Control Systems. Alongside the coursework, I spent a lot of that time teaching myself programming and software development, entirely outside the curriculum, simply because I was already hooked on building things. Chasing that curiosity instead of just the grades is what turned into the career I have today.
 </p>
 """,
         "media": [
